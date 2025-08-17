@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICAIF 2025 Workshop | Rethinking Financial Time-Series</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {  
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e2e8f0;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, #38bdf8, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .nav-link {
+            transition: color 0.3s;
+        }
+        .nav-link:hover {
+            color: #38bdf8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header id="header" class="bg-black/60 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 border-b border-gray-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-white">ICAIF 2025 Workshop</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#speakers" class="nav-link text-slate-300">Speakers</a>
+                <a href="#topics" class="nav-link text-slate-300">Topics</a>
+                <a href="#schedule" class="nav-link text-slate-300">Schedule</a>
+                <a href="#organizers" class="nav-link text-slate-300">Organizers</a>
+                <a href="#about" class="nav-link text-slate-300">About</a>
+                <a href="#cfp" class="nav-link text-slate-300">Call for Papers</a>
+                <a href="#committee" class="nav-link text-slate-300">Committee</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900/90">
+            <a href="#speakers" class="block py-2 px-6 text-slate-300 hover:bg-gray-800">Speakers</a>
+            <a href="#topics" class="block py-2 px-6 text-slate-300 hover:bg-gray-800">Topics</a>
+            <a href="#schedule" class="block py-2 px-6 text-slate-300 hover:bg-gray-800">Schedule</a>
+            <a href="#organizers" class="block py-2 px-6 text-slate-300 hover:bg-gray-800">Organizers</a>
+            <a href="#about" class="block py-2 px-6 text-slate-300 hover:bg-gray-800">About</a>
+            <a href="#cfp" class="block py-2 px-6 text-slate-300 hover:bg-gray-800">Call for Papers</a>
+            <a href="#committee" class="block py-2 px-6 text-slate-300 hover:bg-gray-800">Committee</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="min-h-screen flex items-center pt-20" style="background-image: url('https://placehold.co/1920x1080/0a0a0a/1f2937?text='); background-size: cover; background-position: center;">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-4">
+                    Workshop on Rethinking Financial Time-Series
+                </h1>
+                <h2 class="gradient-text text-2xl md:text-4xl font-semibold mb-6">
+                    Foundations, Frontiers, and Future Directions
+                </h2>
+                <p class="text-lg md:text-xl text-slate-400 mb-8">
+                    Held in conjunction with ICAIF 2025 in Singapore
+                </p>
+                <a href="#about" class="bg-sky-500 text-white font-bold py-3 px-8 rounded-full hover:bg-sky-600 transition duration-300">Learn More</a>
+                 <div class="mt-12 text-slate-300">
+                    <h3 class="font-semibold text-white text-lg">Workshop Contact</h3>
+                    <p>Yoontae Hwang</p>
+                    <p>
+                        <a href="mailto:YoontaeResearch@gmail.com" class="hover:text-sky-400 transition">YoontaeResearch@gmail.com</a> |
+                        <a href="mailto:Yoontae.Hwang@ox.ac.uk" class="hover:text-sky-400 transition">Yoontae.Hwang@ox.ac.uk</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Speakers Section -->
+        <section id="speakers" class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title text-white">Invited Speakers</h2>
+                <div class="max-w-2xl mx-auto">
+                    <div class="glass-card rounded-lg p-8">
+                        <p class="text-2xl text-slate-300">
+                            The list of confirmed speakers will be announced soon. Stay tuned!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Topics of Interest Section -->
+        <section id="topics" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-white">Topics of Interest</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Topic Category -->
+                    <div class="glass-card rounded-lg p-6">
+                        <h3 class="text-2xl font-bold mb-4 gradient-text">Foundations & Robustness</h3>
+                        <ul class="space-y-2 text-slate-300 list-disc list-inside">
+                            <li>Principled methods for heavy-tailed noise, volatility clustering, and regime shifts.</li>
+                            <li>Case studies and post-mortems of AI model failures.</li>
+                            <li>Development of robust benchmarks and evaluation metrics.</li>
+                            <li>High-fidelity synthetic data generation.</li>
+                        </ul>
+                    </div>
+                    <!-- Topic Category -->
+                    <div class="glass-card rounded-lg p-6">
+                        <h3 class="text-2xl font-bold mb-4 gradient-text">Frontiers in Data & Models</h3>
+                        <ul class="space-y-2 text-slate-300 list-disc list-inside">
+                            <li>Frameworks for multi-modal, irregular, and high-frequency data.</li>
+                            <li>Techniques for adapting to distribution shifts in real-time.</li>
+                            <li>Application and limitations of foundation models and LLMs in finance.</li>
+                            <li>Self-supervised and semi-supervised learning.</li>
+                        </ul>
+                    </div>
+                    <!-- Topic Category -->
+                    <div class="glass-card rounded-lg p-6">
+                        <h3 class="text-2xl font-bold mb-4 gradient-text">Future Directions & New Paradigms</h3>
+                        <ul class="space-y-2 text-slate-300 list-disc list-inside">
+                            <li>Causal inference and discovery in financial time-series.</li>
+                            <li>Interpretability and explainability of "black-box" models.</li>
+                            <li>Rigorous uncertainty quantification for forecasting.</li>
+                            <li>Integrating economic costs and market impact into model design.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Schedule Section -->
+        <section id="schedule" class="py-20 bg-gray-900/50">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-white">Tentative Schedule</h2>
+                <div class="max-w-3xl mx-auto">
+                    <div class="relative border-l-2 border-sky-500 pl-8 space-y-10">
+                        <!-- Timeline Item -->
+                        <div class="relative">
+                            <div class="absolute -left-10 top-1 h-4 w-4 rounded-full bg-sky-500"></div>
+                            <p class="font-bold text-sky-400">08:00 - 08:05</p>
+                            <h3 class="text-xl font-semibold text-white mt-1">Opening Remarks</h3>
+                        </div>
+                        <!-- Timeline Item -->
+                        <div class="relative">
+                            <div class="absolute -left-10 top-1 h-4 w-4 rounded-full bg-sky-500"></div>
+                            <p class="font-bold text-sky-400">08:05 - 08:35</p>
+                            <h3 class="text-xl font-semibold text-white mt-1">Keynote #1</h3>
+                        </div>
+                        <!-- Timeline Item -->
+                        <div class="relative">
+                            <div class="absolute -left-10 top-1 h-4 w-4 rounded-full bg-sky-500"></div>
+                            <p class="font-bold text-sky-400">08:35 - 09:05</p>
+                            <h3 class="text-xl font-semibold text-white mt-1">Invited Talk #1</h3>
+                        </div>
+                        <!-- Timeline Item -->
+                        <div class="relative">
+                            <div class="absolute -left-10 top-1 h-4 w-4 rounded-full bg-sky-500"></div>
+                            <p class="font-bold text-sky-400">09:05 - 09:45</p>
+                            <h3 class="text-xl font-semibold text-white mt-1">Best Papers Talks (#1-#2)</h3>
+                        </div>
+                        <!-- Timeline Item -->
+                        <div class="relative">
+                            <div class="absolute -left-10 top-1 h-4 w-4 rounded-full bg-slate-500"></div>
+                            <p class="font-bold text-slate-400">09:45 - 10:00</p>
+                            <h3 class="text-xl font-semibold text-white mt-1">Coffee Break</h3>
+                        </div>
+                         <!-- Timeline Item -->
+                        <div class="relative">
+                            <div class="absolute -left-10 top-1 h-4 w-4 rounded-full bg-sky-500"></div>
+                            <p class="font-bold text-sky-400">10:00 - 11:20</p>
+                            <h3 class="text-xl font-semibold text-white mt-1">Invited Talks & Best Paper</h3>
+                            <p class="text-slate-300">Invited Talk #2, Invited Talk #3 (Industry), Best Papers Talk #3</p>
+                        </div>
+                        <!-- Timeline Item -->
+                        <div class="relative">
+                            <div class="absolute -left-10 top-1 h-4 w-4 rounded-full bg-sky-500"></div>
+                            <p class="font-bold text-sky-400">11:20 - 11:55</p>
+                            <h3 class="text-xl font-semibold text-white mt-1">Keynote #2 & Closing Remarks</h3>
+                        </div>
+                         <!-- Timeline Item -->
+                        <div class="relative">
+                            <div class="absolute -left-10 top-1 h-4 w-4 rounded-full bg-slate-500"></div>
+                            <p class="font-bold text-slate-400">11:55 onwards</p>
+                            <h3 class="text-xl font-semibold text-white mt-1">Networking & Poster Session</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Organizers Section -->
+        <section id="organizers" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-white">Organizers</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                    <!-- Organizer Card -->
+                    <div class="glass-card rounded-lg p-6 text-center">
+                        <img src="organizer/yoontae.png" onerror="this.onerror=null;this.src='https.placehold.co/150x150/1e293b/9ca3af?text=YH';" class="w-32 h-32 rounded-full mx-auto mb-4 border-2 border-slate-500 object-cover" alt="Yoontae Hwang">
+                        <h3 class="text-xl font-semibold text-white">Yoontae Hwang</h3>
+                        <p class="text-slate-400">University of Oxford</p>
+                    </div>
+                    <!-- Organizer Card -->
+                    <div class="glass-card rounded-lg p-6 text-center">
+                        <img src="organizer/Yongjae.jpeg" onerror="this.onerror=null;this.src='https.placehold.co/150x150/1e293b/9ca3af?text=YL';" class="w-32 h-32 rounded-full mx-auto mb-4 border-2 border-slate-500 object-cover" alt="Yongjae Lee">
+                        <h3 class="text-xl font-semibold text-white">Yongjae Lee</h3>
+                        <p class="text-slate-400">UNIST</p>
+                    </div>
+                    <!-- Organizer Card -->
+                    <div class="glass-card rounded-lg p-6 text-center">
+                        <img src="organizer/Zhangyang.jpeg" onerror="this.onerror=null;this.src='https.placehold.co/150x150/1e293b/9ca3af?text=ZW';" class="w-32 h-32 rounded-full mx-auto mb-4 border-2 border-slate-500 object-cover" alt="Zhangyang Wang">
+                        <h3 class="text-xl font-semibold text-white">Zhangyang Wang</h3>
+                        <p class="text-slate-400">UT Austin</p>
+                    </div>
+                    <!-- Organizer Card -->
+                    <div class="glass-card rounded-lg p-6 text-center">
+                        <img src="organizer/Qingsong.jpeg" onerror="this.onerror=null;this.src='https.placehold.co/150x150/1e293b/9ca3af?text=QW';" class="w-32 h-32 rounded-full mx-auto mb-4 border-2 border-slate-500 object-cover" alt="Qingsong Wen">
+                        <h3 class="text-xl font-semibold text-white">Qingsong Wen</h3>
+                        <p class="text-slate-400">Squirrel AI Learning</p>
+                    </div>
+                    <!-- Organizer Card -->
+                    <div class="glass-card rounded-lg p-6 text-center">
+                        <img src="organizer/mingjin.png" onerror="this.onerror=null;this.src='https.placehold.co/150x150/1e293b/9ca3af?text=MJ';" class="w-32 h-32 rounded-full mx-auto mb-4 border-2 border-slate-500 object-cover" alt="Ming Jin">
+                        <h3 class="text-xl font-semibold text-white">Ming Jin</h3>
+                        <p class="text-slate-400">Griffith University</p>
+                    </div>
+                    <!-- Organizer Card -->
+                    <div class="glass-card rounded-lg p-6 text-center">
+                        <img src="organizer/stefan-zohren.jpg" onerror="this.onerror=null;this.src='https.placehold.co/150x150/1e293b/9ca3af?text=SZ';" class="w-32 h-32 rounded-full mx-auto mb-4 border-2 border-slate-500 object-cover" alt="Stefan Zohren">
+                        <h3 class="text-xl font-semibold text-white">Stefan Zohren</h3>
+                        <p class="text-slate-400">University of Oxford</p>
+                    </div>
+                    <!-- Organizer Card -->
+                    <div class="glass-card rounded-lg p-6 text-center">
+                        <img src="organizer/Dhagash-Mehta.jpeg" onerror="this.onerror=null;this.src='https.placehold.co/150x150/1e293b/9ca3af?text=DM';" class="w-32 h-32 rounded-full mx-auto mb-4 border-2 border-slate-500 object-cover" alt="Dhagash Mehta">
+                        <h3 class="text-xl font-semibold text-white">Dhagash Mehta</h3>
+                        <p class="text-slate-400">BlackRock, Inc.</p>
+                    </div>
+                    <!-- Organizer Card -->
+                    <div class="glass-card rounded-lg p-6 text-center">
+                        <img src="organizer/Yaxuan.jpeg" onerror="this.onerror=null;this.src='https.placehold.co/150x150/1e293b/9ca3af?text=YK';" class="w-32 h-32 rounded-full mx-auto mb-4 border-2 border-slate-500 object-cover" alt="Yaxuan Kong">
+                        <h3 class="text-xl font-semibold text-white">Yaxuan Kong</h3>
+                        <p class="text-slate-400">University of Oxford</p>
+                    </div>
+                    <!-- Organizer Card -->
+                    <div class="glass-card rounded-lg p-6 text-center">
+                        <img src="organizer/Changhee.jpeg" onerror="this.onerror=null;this.src='https.placehold.co/150x150/1e293b/9ca3af?text=CL';" class="w-32 h-32 rounded-full mx-auto mb-4 border-2 border-slate-500 object-cover" alt="Changhee Lee">
+                        <h3 class="text-xl font-semibold text-white">Changhee Lee</h3>
+                        <p class="text-slate-400">Korea University</p>
+                    </div>
+                    <!-- Organizer Card -->
+                    <div class="glass-card rounded-lg p-6 text-center">
+                        <img src="organizer/JaeHo.jpg" onerror="this.onerror=null;this.src='https.placehold.co/150x150/1e293b/9ca3af?text=JK';" class="w-32 h-32 rounded-full mx-auto mb-4 border-2 border-slate-500 object-cover" alt="Jaeho Kim">
+                        <h3 class="text-xl font-semibold text-white">Jaeho Kim</h3>
+                        <p class="text-slate-400">Korea University</p>
+                    </div>
+                    <!-- Organizer Card -->
+                    <div class="glass-card rounded-lg p-6 text-center">
+                        <img src="organizer/haoni.jpeg" onerror="this.onerror=null;this.src='https.placehold.co/150x150/1e293b/9ca3af?text=HN';" class="w-32 h-32 rounded-full mx-auto mb-4 border-2 border-slate-500 object-cover" alt="Hao Ni">
+                        <h3 class="text-xl font-semibold text-white">Hao Ni</h3>
+                        <p class="text-slate-400">University College London</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-20 bg-gray-900/50">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-white">About the Workshop</h2>
+                <div class="max-w-4xl mx-auto text-slate-300 text-lg leading-relaxed space-y-6">
+                    <p>Financial time-series analysis sits at the epicentre of today's algorithmic markets. However, its core foundations remain unsettled; the heavy-tailed noise, abrupt regime shifts, and market-microstructure frictions inherent to financial data continue to defy standard modelling assumptions. Ignoring these fundamentals has led to models that are often brittle in practice.</p>
+                    <p>Simultaneously, the field is being reshaped by new frontiers in data and modelling. The proliferation of cross-modal signals from millisecond order-book updates and satellite feeds to generative-AI-curated news is overwhelming traditional pipelines. This data deluge has spurred the rise of large-scale foundation models, challenging us to reconcile immense scale with statistical soundness and avoid creating sophisticated yet unreliable black boxes.</p>
+                    <p>This workshop provides a forum to confront these questions head-on. We solicit contributions that re-evaluate foundational principles, push the frontiers of model development, or chart future research paths. We welcome submissions on principled learning for volatile data, robustness and distribution shifts, novel benchmarks and evaluation protocols, case studies of model failures, and methods for causal inference or interpretability.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call for Papers Section -->
+        <section id="cfp" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-white">Call for Papers</h2>
+                <div class="max-w-4xl mx-auto text-center">
+                    <p class="text-slate-300 text-lg leading-relaxed mb-8">
+                        We invite submissions of original research related to the workshop themes. All submissions will be peer-reviewed based on originality, technical soundness, and relevance.
+                    </p>
+                    <div class="glass-card rounded-lg p-8 inline-block">
+                        <h3 class="text-2xl font-bold text-white mb-4">Important Dates</h3>
+                        <ul class="text-slate-300 space-y-2">
+                            <li><strong>Submission Deadline:</strong> TBD</li>
+                            <li><strong>Author Notification:</strong> TBD</li>
+                            <li><strong>Camera-Ready Deadline:</strong> TBD</li>
+                        </ul>
+                    </div>
+                     <div class="mt-8">
+                        <a href="#" class="bg-sky-500 text-white font-bold py-3 px-8 rounded-full hover:bg-sky-600 transition duration-300">Submission Guidelines (Coming Soon)</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Program Committee Section -->
+        <section id="committee" class="py-20 bg-gray-900/50">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-title text-white">Program Committee</h2>
+                <div class="max-w-2xl mx-auto">
+                    <div class="glass-card rounded-lg p-8">
+                        <p class="text-2xl text-slate-300">
+                            The program committee will be announced soon.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800">
+        <div class="container mx-auto px-6 py-8 text-center text-slate-400">
+            <p>&copy; 2025 ICAIF Workshop on Rethinking Financial Time-Series. All rights reserved.</p>
+            <p class="mt-2">Contact: <a href="mailto:Yoontae.Hwang@ox.ac.uk" class="text-sky-400 hover:underline">Yoontae.Hwang@ox.ac.uk</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize lucide icons
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        const mobileNavLinks = document.querySelectorAll('#mobile-menu a');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    // Adjust for fixed header height
+                    const headerOffset = document.getElementById('header').offsetHeight;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

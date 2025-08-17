@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        body {  
+        body {
             font-family: 'Inter', sans-serif;
             background-color: #0a0a0a;
             color: #e2e8f0;
@@ -46,12 +46,12 @@
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-xl font-bold text-white">ICAIF 2025 Workshop</a>
             <nav class="hidden md:flex space-x-8">
+                <a href="#cfp" class="nav-link text-slate-300">Call for Papers</a>
                 <a href="#speakers" class="nav-link text-slate-300">Speakers</a>
                 <a href="#topics" class="nav-link text-slate-300">Topics</a>
                 <a href="#schedule" class="nav-link text-slate-300">Schedule</a>
                 <a href="#organizers" class="nav-link text-slate-300">Organizers</a>
                 <a href="#about" class="nav-link text-slate-300">About</a>
-                <a href="#cfp" class="nav-link text-slate-300">Call for Papers</a>
                 <a href="#committee" class="nav-link text-slate-300">Committee</a>
             </nav>
             <button id="mobile-menu-button" class="md:hidden text-white">
@@ -60,12 +60,12 @@
         </div>
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-gray-900/90">
+            <a href="#cfp" class="block py-2 px-6 text-slate-300 hover:bg-gray-800">Call for Papers</a>
             <a href="#speakers" class="block py-2 px-6 text-slate-300 hover:bg-gray-800">Speakers</a>
             <a href="#topics" class="block py-2 px-6 text-slate-300 hover:bg-gray-800">Topics</a>
             <a href="#schedule" class="block py-2 px-6 text-slate-300 hover:bg-gray-800">Schedule</a>
             <a href="#organizers" class="block py-2 px-6 text-slate-300 hover:bg-gray-800">Organizers</a>
             <a href="#about" class="block py-2 px-6 text-slate-300 hover:bg-gray-800">About</a>
-            <a href="#cfp" class="block py-2 px-6 text-slate-300 hover:bg-gray-800">Call for Papers</a>
             <a href="#committee" class="block py-2 px-6 text-slate-300 hover:bg-gray-800">Committee</a>
         </div>
     </header>
@@ -95,8 +95,46 @@
             </div>
         </section>
 
+        <!-- Call for Papers Section -->
+        <section id="cfp" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-white">Call for Papers</h2>
+                <div class="max-w-4xl mx-auto text-center">
+                    <div class="glass-card rounded-lg p-8 inline-block mb-12">
+                        <h3 class="text-2xl font-bold text-white mb-4">Important Dates</h3>
+                        <ul class="text-slate-300 space-y-2 text-left">
+                            <li><strong>Submission Deadline:</strong> October 1st, 2025 (AoE)</li>
+                            <li><strong>Author Notification:</strong> October 15th, 2025 (AoE)</li>
+                            <li><strong>Camera-Ready Deadline:</strong> October 31st, 2025 (AoE)</li>
+                            <li><strong>Workshop Date:</strong> To be announced</li>
+                        </ul>
+                    </div>
+
+                    <div class="text-left max-w-3xl mx-auto text-slate-300 space-y-6">
+                        <h3 class="text-2xl font-bold text-white text-center">Submission Guidelines</h3>
+                        <p>Submissions will be managed through OpenReview. The submission link will be updated soon. Authors must submit their paper (as a PDF), title, author names, contact information, and a brief abstract electronically via the workshop submission site. At least one author of each accepted paper must attend the conference to present their work.</p>
+                        
+                        <div>
+                            <h4 class="text-xl font-semibold text-white mb-2">Review Process</h4>
+                            <p>The review process will be double-blind. There will be no rebuttal period.</p>
+                        </div>
+
+                        <div>
+                            <h4 class="text-xl font-semibold text-white mb-2">Presentation and Proceedings</h4>
+                            <p>All accepted papers will be invited to a poster session. Participants are required to print and bring their own posters to the event. Detailed information regarding poster format and submission requirements will be provided by the organizers upon acceptance.</p>
+                            <p>Selected papers may also be given the opportunity for an oral presentation, subject to schedule constraints.</p>
+                            <p>The workshop is non-archival, and there will be no official proceedings. Only the names of the authors and the titles of the accepted papers will be posted on the website; the papers themselves will not be made public.</p>
+                        </div>
+                        <div class="text-center pt-4">
+                             <a href="https://openreview.net/" target="_blank" class="bg-sky-500 text-white font-bold py-3 px-8 rounded-full hover:bg-sky-600 transition duration-300">Submit via OpenReview (Link coming soon)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Speakers Section -->
-        <section id="speakers" class="py-20">
+        <section id="speakers" class="py-20 bg-gray-900/50">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="section-title text-white">Invited Speakers</h2>
                 <div class="max-w-2xl mx-auto">
@@ -294,32 +332,9 @@
                 </div>
             </div>
         </section>
-
-        <!-- Call for Papers Section -->
-        <section id="cfp" class="py-20">
-            <div class="container mx-auto px-6">
-                <h2 class="section-title text-white">Call for Papers</h2>
-                <div class="max-w-4xl mx-auto text-center">
-                    <p class="text-slate-300 text-lg leading-relaxed mb-8">
-                        We invite submissions of original research related to the workshop themes. All submissions will be peer-reviewed based on originality, technical soundness, and relevance.
-                    </p>
-                    <div class="glass-card rounded-lg p-8 inline-block">
-                        <h3 class="text-2xl font-bold text-white mb-4">Important Dates</h3>
-                        <ul class="text-slate-300 space-y-2">
-                            <li><strong>Submission Deadline:</strong> TBD</li>
-                            <li><strong>Author Notification:</strong> TBD</li>
-                            <li><strong>Camera-Ready Deadline:</strong> TBD</li>
-                        </ul>
-                    </div>
-                     <div class="mt-8">
-                        <a href="#" class="bg-sky-500 text-white font-bold py-3 px-8 rounded-full hover:bg-sky-600 transition duration-300">Submission Guidelines (Coming Soon)</a>
-                    </div>
-                </div>
-            </div>
-        </section>
         
         <!-- Program Committee Section -->
-        <section id="committee" class="py-20 bg-gray-900/50">
+        <section id="committee" class="py-20">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="section-title text-white">Program Committee</h2>
                 <div class="max-w-2xl mx-auto">

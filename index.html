@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ICAIF 2025 Workshop | Rethinking Financial Time-Series</title>
+
+    <!-- === Open Graph Meta Tags for Social Sharing === -->
+    <meta property="og:title" content="ICAIF 2025 Workshop | Rethinking Financial Time-Series">
+    <meta property="og:description" content="A workshop on re-evaluating foundational principles and pushing the frontiers of model development for financial time-series.">
+    <!-- Make sure 'logo.svg' is in the root directory of your website -->
+    <meta property="og:image" content="logo.svg"> 
+    <!-- TODO: Update this URL to your website's final address -->
+    <meta property="og:url" content="https://your-website-url.com"> 
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <!-- === End of Open Graph Meta Tags === -->
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,6 +46,26 @@
         }
         .nav-link { transition: color 0.3s; }
         .nav-link:hover { color: #38bdf8; }
+
+        /* --- Modal Styles --- */
+        /* Style to prevent body scroll when modal is open */
+        body.modal-open {
+            overflow: hidden;
+        }
+
+        /* Scoped styles for poster content inside the modal */
+        #poster-modal-content .glass-card {
+            background: rgba(15, 15, 22, 0.6);
+            backdrop-filter: blur(16px) saturate(150%);
+            -webkit-backdrop-filter: blur(16px) saturate(150%);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        #poster-modal-content .gradient-text {
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
     </style>
 </head>
 <body>
@@ -113,7 +145,11 @@
                 <p class="text-lg md:text-xl text-slate-400 mb-8">
                     Held in conjunction with ICAIF 2025 in Singapore
                 </p>
-                <a href="#about" class="bg-sky-500 text-white font-bold py-3 px-8 rounded-full hover:bg-sky-600 transition duration-300">Learn More</a>
+                <!-- ACTION BUTTONS: Learn More and Poster -->
+                <div class="flex justify-center items-center space-x-4">
+                    <a href="#about" class="bg-sky-500 text-white font-bold py-3 px-8 rounded-full hover:bg-sky-600 transition duration-300">Learn More</a>
+                    <button id="poster-toggle-button" class="bg-indigo-500 text-white font-bold py-3 px-8 rounded-full hover:bg-indigo-600 transition duration-300">Poster</button>
+                </div>
                  <div class="mt-12 text-slate-300">
                     <h3 class="font-semibold text-white text-lg">Workshop Contact</h3>
                     <p>Yoontae Hwang</p>
@@ -400,6 +436,15 @@
         </section>
     </main>
 
+    <!-- Poster Modal -->
+    <div id="poster-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 z-[100] hidden">
+        <div id="poster-modal-content" class="relative w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-lg" 
+             style="background-color: #0a0a14; background-image: radial-gradient(circle at top right, rgba(0, 198, 255, 0.1), transparent 40%), radial-gradient(circle at bottom left, rgba(0, 114, 255, 0.1), transparent 40%);">
+            <!-- Poster HTML will be injected here by JavaScript -->
+        </div>
+    </div>
+
+
     <!-- Footer -->
     <footer class="bg-gray-900 border-t border-gray-800">
         <div class="container mx-auto px-6 py-8 text-center text-slate-400">
@@ -428,15 +473,18 @@
         });
         
         // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        document.querySelectorAll('a[href^="#"]:not([target="_blank"])').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 const href = this.getAttribute('href');
-                if (!href || href === '#') return; // keep logo clickable
-                e.preventDefault();
-                const targetId = href;
-                const targetElement = document.querySelector(targetId);
+                if (!href || href === '#') { 
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    return;
+                }
+                
+                const targetElement = document.querySelector(href);
                 if (targetElement) {
-                    // Adjust for fixed header height
+                    e.preventDefault();
                     const headerOffset = document.getElementById('header').offsetHeight;
                     const elementPosition = targetElement.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
@@ -447,6 +495,159 @@
                     });
                 }
             });
+        });
+
+        // --- POSTER MODAL LOGIC ---
+        const posterToggleButton = document.getElementById('poster-toggle-button');
+        const posterModal = document.getElementById('poster-modal');
+        const posterModalContent = document.getElementById('poster-modal-content');
+
+        const posterBodyContent = `
+        <button id="close-poster-button" class="absolute top-4 right-4 text-white/70 hover:text-white z-10 transition-transform duration-300 hover:scale-110">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        <div class="p-4 sm:p-6 lg:p-8">
+            <div class="w-full max-w-5xl mx-auto">
+                <div class="glass-card rounded-2xl shadow-2xl overflow-hidden">
+                    <div class="p-8 sm:p-12">
+                        <header class="text-center mb-10">
+                            <p class="text-lg font-semibold text-sky-400 mb-2">A Workshop in conjunction with ICAIF 2025</p>
+                            <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight tracking-tight">
+                                Rethinking Financial Time-Series
+                            </h1>
+                            <h2 class="gradient-text text-2xl md:text-3xl font-bold mt-3">
+                                Foundations, Frontiers, and Future Directions
+                            </h2>
+                        </header>
+                        <main class="grid md:grid-cols-2 gap-x-12">
+                            <div class="space-y-8">
+                                <section id="cfp-poster">
+                                    <h3 class="text-2xl font-bold text-center text-white mb-6">Call for Papers</h3>
+                                    <div class="glass-card rounded-xl p-6 text-center border-sky-500/20">
+                                        <h4 class="text-xl font-semibold text-white mb-4">Important Dates</h4>
+                                        <ul class="text-slate-300 space-y-2">
+                                            <li><strong>Submission Deadline:</strong> October 1st, 2025</li>
+                                            <li><strong>Author Notification:</strong> October 15th, 2025</li>
+                                            <li><strong>Camera-Ready Deadline:</strong> October 31st, 2025</li>
+                                        </ul>
+                                    </div>
+                                </section>
+                                <section id="about-poster">
+                                    <h3 class="text-2xl font-bold text-center text-white mb-6">About the Workshop</h3>
+                                    <div class="glass-card rounded-xl p-6 border-sky-500/20">
+                                        <p class="text-slate-300 text-justify text-sm leading-relaxed">
+                                            This workshop confronts core challenges in financial time-series, from its unsettled statistical foundations to the frontiers of large-scale models. We aim to bridge the gap between theory and practice—welcoming submissions on lessons from both successes and failures—to foster discussion on robust and interpretable AI for modern finance.
+                                        </p>
+                                    </div>
+                                </section>
+                            </div>
+                            <div id="organizers-poster">
+                                <h3 class="text-2xl font-bold text-center text-white mb-6">Organizers</h3>
+                                <div class="grid grid-cols-3 sm:grid-cols-4 gap-4">
+                                    <div class="text-center">
+                                        <img src="https://placehold.co/150x150/1e293b/9ca3af?text=YH" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=YH';" class="w-24 h-24 rounded-full mx-auto mb-2 border-2 border-slate-600 object-cover" alt="Yoontae Hwang">
+                                        <h4 class="text-sm font-semibold text-white">Yoontae Hwang</h4>
+                                        <p class="text-xs text-slate-400">Univ of Oxford</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <img src="https://placehold.co/150x150/1e293b/9ca3af?text=YL" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=YL';" class="w-24 h-24 rounded-full mx-auto mb-2 border-2 border-slate-600 object-cover" alt="Yongjae Lee">
+                                        <h4 class="text-sm font-semibold text-white">Yongjae Lee</h4>
+                                        <p class="text-xs text-slate-400">UNIST</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <img src="https://placehold.co/150x150/1e293b/9ca3af?text=ZW" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=ZW';" class="w-24 h-24 rounded-full mx-auto mb-2 border-2 border-slate-600 object-cover" alt="Zhangyang Wang">
+                                        <h4 class="text-sm font-semibold text-white">Zhangyang Wang</h4>
+                                        <p class="text-xs text-slate-400">UT Austin</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <img src="https://placehold.co/150x150/1e293b/9ca3af?text=QW" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=QW';" class="w-24 h-24 rounded-full mx-auto mb-2 border-2 border-slate-600 object-cover" alt="Qingsong Wen">
+                                        <h4 class="text-sm font-semibold text-white">Qingsong Wen</h4>
+                                        <p class="text-xs text-slate-400">Squirrel AI</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <img src="https://placehold.co/150x150/1e293b/9ca3af?text=MJ" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=MJ';" class="w-24 h-24 rounded-full mx-auto mb-2 border-2 border-slate-600 object-cover" alt="Ming Jin">
+                                        <h4 class="text-sm font-semibold text-white">Ming Jin</h4>
+                                        <p class="text-xs text-slate-400">Griffith Univ</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <img src="https://placehold.co/150x150/1e293b/9ca3af?text=SZ" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=SZ';" class="w-24 h-24 rounded-full mx-auto mb-2 border-2 border-slate-600 object-cover" alt="Stefan Zohren">
+                                        <h4 class="text-sm font-semibold text-white">Stefan Zohren</h4>
+                                        <p class="text-xs text-slate-400">Univ of Oxford</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <img src="https://placehold.co/150x150/1e293b/9ca3af?text=DM" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=DM';" class="w-24 h-24 rounded-full mx-auto mb-2 border-2 border-slate-600 object-cover" alt="Dhagash Mehta">
+                                        <h4 class="text-sm font-semibold text-white">Dhagash Mehta</h4>
+                                        <p class="text-xs text-slate-400">BlackRock, Inc.</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <img src="https://placehold.co/150x150/1e293b/9ca3af?text=YK" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=YK';" class="w-24 h-24 rounded-full mx-auto mb-2 border-2 border-slate-600 object-cover" alt="Yaxuan Kong">
+                                        <h4 class="text-sm font-semibold text-white">Yaxuan Kong</h4>
+                                        <p class="text-xs text-slate-400">Univ of Oxford</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <img src="https://placehold.co/150x150/1e293b/9ca3af?text=CL" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=CL';" class="w-24 h-24 rounded-full mx-auto mb-2 border-2 border-slate-600 object-cover" alt="Changhee Lee">
+                                        <h4 class="text-sm font-semibold text-white">Changhee Lee</h4>
+                                        <p class="text-xs text-slate-400">Korea Univ</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <img src="https://placehold.co/150x150/1e293b/9ca3af?text=JK" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=JK';" class="w-24 h-24 rounded-full mx-auto mb-2 border-2 border-slate-600 object-cover" alt="Jaeho Kim">
+                                        <h4 class="text-sm font-semibold text-white">Jaeho Kim</h4>
+                                        <p class="text-xs text-slate-400">Korea Univ</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <img src="https://placehold.co/150x150/1e293b/9ca3af?text=HN" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=HN';" class="w-24 h-24 rounded-full mx-auto mb-2 border-2 border-slate-600 object-cover" alt="Hao Ni">
+                                        <h4 class="text-sm font-semibold text-white">Hao Ni</h4>
+                                        <p class="text-xs text-slate-400">UCL</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </main>
+                        <footer class="mt-12 pt-8 border-t border-slate-700/50">
+                            <section id="info-poster">
+                                 <p class="text-center text-xl text-slate-200 mb-4 font-semibold">
+                                     Held in Singapore, 2025
+                                 </p>
+                                 <div class="text-center text-slate-400">
+                                     <p class="font-semibold text-white">Workshop Contact</p>
+                                     <p>Yoontae Hwang // YoontaeResearch@gmail.com</p>
+                                 </div>
+                            </section>
+                        </footer>
+                    </div>
+                </div>
+            </div>
+        </div>
+        `;
+
+        // Inject the poster content into the modal
+        posterModalContent.innerHTML = posterBodyContent;
+
+        // Function to open the modal
+        const openModal = () => {
+            posterModal.classList.remove('hidden');
+            document.body.classList.add('modal-open');
+        };
+
+        // Function to close the modal
+        const closeModal = () => {
+            posterModal.classList.add('hidden');
+            document.body.classList.remove('modal-open');
+        };
+
+        // Event listeners
+        posterToggleButton.addEventListener('click', openModal);
+
+        // The close button is inside the injected content, so we need to get it after injection
+        const closePosterButton = document.getElementById('close-poster-button');
+        if (closePosterButton) {
+            closePosterButton.addEventListener('click', closeModal);
+        }
+
+        // Close modal when clicking on the backdrop
+        posterModal.addEventListener('click', (e) => {
+            if (e.target === posterModal) {
+                closeModal();
+            }
         });
     </script>
 </body>

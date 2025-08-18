@@ -5,33 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ICAIF 2025 Workshop | Rethinking Financial Time-Series</title>
 
-    <!-- === Open Graph Meta Tags for Social Sharing === -->
+    <!-- === Open Graph / Social Media Meta Tags === -->
     <meta property="og:title" content="ICAIF 2025 Workshop | Rethinking Financial Time-Series">
     <meta property="og:description" content="A workshop on re-evaluating foundational principles and pushing the frontiers of model development for financial time-series.">
-    <link rel="canonical" href="https://icaif25-rfts.github.io/">
-
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://icaif25-rfts.github.io/">
-    <meta property="og:title" content="ICAIF 2025 Workshop | Rethinking Financial Time-Series">
-    <meta property="og:description" content="A workshop on re-evaluating foundational principles and pushing the frontiers of model development for financial time-series.">
     <meta property="og:image" content="https://icaif25-rfts.github.io/logo.png?v=2">
     <meta property="og:image:secure_url" content="https://icaif25-rfts.github.io/logo.png?v=2">
     <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="ICAIF 2025 Workshop — Rethinking Financial Time‑Series">
+    <link rel="canonical" href="https://icaif25-rfts.github.io/">
+    <link rel="image_src" href="https://icaif25-rfts.github.io/logo.png?v=2">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ICAIF 2025 Workshop | Rethinking Financial Time-Series">
     <meta name="twitter:description" content="A workshop on re-evaluating foundational principles and pushing the frontiers of model development for financial time-series.">
     <meta name="twitter:image" content="https://icaif25-rfts.github.io/logo.png?v=2">
     <meta name="twitter:image:alt" content="ICAIF 2025 Workshop — Rethinking Financial Time‑Series">
-      <!-- (선택) 레거시 파서용 -->
-    <link rel="image_src" href="https://icaif25-rfts.github.io/logo.png?v=2">
-   
-    <meta property="og:url" content="https://your-website-url.com"> 
-    <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
     <!-- === End of Open Graph Meta Tags === -->
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -56,29 +48,19 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .section-title {
-            font-size: 2.25rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
         .nav-link { transition: color 0.3s; }
         .nav-link:hover { color: #38bdf8; }
 
         /* --- Modal Styles --- */
-        /* Style to prevent body scroll when modal is open */
         body.modal-open {
             overflow: hidden;
         }
-
-        /* Scoped styles for poster content inside the modal */
         #poster-modal-content .glass-card {
             background: rgba(15, 15, 22, 0.6);
             backdrop-filter: blur(16px) saturate(150%);
             -webkit-backdrop-filter: blur(16px) saturate(150%);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
-
         #poster-modal-content .gradient-text {
             background: linear-gradient(to right, #00c6ff, #0072ff);
             -webkit-background-clip: text;
@@ -86,10 +68,10 @@
         }
     </style>
 </head>
-<body>
+<body class="antialiased">
     <!-- Header & Navigation -->
     <header id="header" class="bg-black/60 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 border-b border-gray-800">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="container mx-auto px-4 sm:px-6 py-3 flex justify-between items-center">
             <!-- LOGO START -->
             <a href="#" class="flex items-center group" aria-label="ICAIF 2025 Workshop — Rethinking Financial Time‑Series home">
                 <svg class="h-10 w-10 flex-none" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
@@ -125,7 +107,8 @@
             </a>
             <!-- LOGO END -->
 
-            <nav class="hidden md:flex space-x-8">
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-6 lg:space-x-8 text-sm">
                 <a href="#cfp" class="nav-link text-slate-300">Call for Papers</a>
                 <a href="#speakers" class="nav-link text-slate-300">Speakers</a>
                 <a href="#topics" class="nav-link text-slate-300">Topics</a>
@@ -134,61 +117,70 @@
                 <a href="#about" class="nav-link text-slate-300">About</a>
                 <a href="#committee" class="nav-link text-slate-300">Committee</a>
             </nav>
-            <button id="mobile-menu-button" class="md:hidden text-white">
-                <i data-lucide="menu"></i>
+            
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-white p-2 -mr-2">
+                <i data-lucide="menu" class="h-6 w-6"></i>
+                <span class="sr-only">Open menu</span>
             </button>
         </div>
+        
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-gray-900/90">
-            <a href="#cfp" class="block py-2 px-6 text-slate-300 hover:bg-gray-800">Call for Papers</a>
-            <a href="#speakers" class="block py-2 px-6 text-slate-300 hover:bg-gray-800">Speakers</a>
-            <a href="#topics" class="block py-2 px-6 text-slate-300 hover:bg-gray-800">Topics</a>
-            <a href="#schedule" class="block py-2 px-6 text-slate-300 hover:bg-gray-800">Schedule</a>
-            <a href="#organizers" class="block py-2 px-6 text-slate-300 hover:bg-gray-800">Organizers</a>
-            <a href="#about" class="block py-2 px-6 text-slate-300 hover:bg-gray-800">About</a>
-            <a href="#committee" class="block py-2 px-6 text-slate-300 hover:bg-gray-800">Committee</a>
+        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-800">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="#cfp" class="block py-3 px-4 sm:px-6 text-base font-medium text-slate-300 hover:bg-gray-800/50 hover:text-white">Call for Papers</a>
+                <a href="#speakers" class="block py-3 px-4 sm:px-6 text-base font-medium text-slate-300 hover:bg-gray-800/50 hover:text-white">Speakers</a>
+                <a href="#topics" class="block py-3 px-4 sm:px-6 text-base font-medium text-slate-300 hover:bg-gray-800/50 hover:text-white">Topics</a>
+                <a href="#schedule" class="block py-3 px-4 sm:px-6 text-base font-medium text-slate-300 hover:bg-gray-800/50 hover:text-white">Schedule</a>
+                <a href="#organizers" class="block py-3 px-4 sm:px-6 text-base font-medium text-slate-300 hover:bg-gray-800/50 hover:text-white">Organizers</a>
+                <a href="#about" class="block py-3 px-4 sm:px-6 text-base font-medium text-slate-300 hover:bg-gray-800/50 hover:text-white">About</a>
+                <a href="#committee" class="block py-3 px-4 sm:px-6 text-base font-medium text-slate-300 hover:bg-gray-800/50 hover:text-white">Committee</a>
+            </div>
         </div>
     </header>
 
     <main>
         <!-- Hero Section -->
-        <section id="hero" class="min-h-screen flex items-center pt-20" style="background-image: url('https://placehold.co/1920x1080/0a0a0a/1f2937?text='); background-size: cover; background-position: center;">
-            <div class="container mx-auto px-6 text-center">
-                <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-4">
+        <section id="hero" class="min-h-screen flex items-center pt-24 pb-12" style="background-image: url('https://placehold.co/1920x1080/0a0a0a/1f2937?text='); background-size: cover; background-position: center;">
+            <div class="container mx-auto px-4 sm:px-6 text-center">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-4">
                     Workshop on Rethinking Financial Time-Series
                 </h1>
-                <h2 class="gradient-text text-2xl md:text-4xl font-semibold mb-6">
+                <h2 class="gradient-text text-2xl sm:text-3xl md:text-4xl font-semibold mb-8">
                     Foundations, Frontiers, and Future Directions
                 </h2>
-                <p class="text-lg md:text-xl text-slate-400 mb-8">
-                    Held in conjunction with ICAIF 2025 in Singapore
+                <p class="text-lg md:text-xl text-slate-400 mb-10 max-w-3xl mx-auto">
+                    Held in conjunction with the 16th ACM International Conference on AI in Finance (ICAIF ’25) in Singapore
                 </p>
-                <!-- ACTION BUTTONS: Learn More, Call for Paper, and Poster -->
-                <div class="flex flex-wrap justify-center items-center gap-4">
-                    <a href="#about" class="bg-sky-500 text-white font-bold py-3 px-8 rounded-full hover:bg-sky-600 transition duration-300">Learn More</a>
-                    <a href="#cfp" class="bg-purple-500 text-white font-bold py-3 px-8 rounded-full hover:bg-purple-600 transition duration-300">Call For Paper</a>
-                    <button id="poster-toggle-button" class="bg-indigo-500 text-white font-bold py-3 px-8 rounded-full hover:bg-indigo-600 transition duration-300">Poster</button>
+                
+                <!-- ACTION BUTTONS -->
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <a href="#about" class="w-full sm:w-auto bg-sky-500 text-white font-bold py-3 px-8 rounded-full hover:bg-sky-600 transition duration-300">Learn More</a>
+                    <a href="#cfp" class="w-full sm:w-auto bg-purple-500 text-white font-bold py-3 px-8 rounded-full hover:bg-purple-600 transition duration-300">Call For Papers</a>
+                    <button id="poster-toggle-button" class="w-full sm:w-auto bg-indigo-500 text-white font-bold py-3 px-8 rounded-full hover:bg-indigo-600 transition duration-300">View Poster</button>
                 </div>
+                
                  <div class="mt-12 text-slate-300">
                     <h3 class="font-semibold text-white text-lg">Workshop Contact</h3>
                     <p>Yoontae Hwang</p>
-                    <p>
-                        <a href="mailto:YoontaeResearch@gmail.com" class="hover:text-sky-400 transition">YoontaeResearch@gmail.com</a> |
+                    <div class="flex flex-col sm:flex-row sm:justify-center sm:space-x-2">
+                        <a href="mailto:YoontaeResearch@gmail.com" class="hover:text-sky-400 transition">YoontaeResearch@gmail.com</a>
+                        <span class="hidden sm:inline">|</span>
                         <a href="mailto:Yoontae.Hwang@ox.ac.uk" class="hover:text-sky-400 transition">Yoontae.Hwang@ox.ac.uk</a>
-                    </p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Call for Papers Section -->
-        <section id="cfp" class="py-20">
-            <div class="container mx-auto px-6">
-                <h2 class="section-title text-white">Call for Papers</h2>
+        <section id="cfp" class="py-16 sm:py-20">
+            <div class="container mx-auto px-4 sm:px-6">
+                <h2 class="text-3xl md:text-4xl font-bold mb-10 text-center text-white">Call for Papers</h2>
                 <div class="max-w-4xl mx-auto text-center">
-                    <div class="glass-card rounded-lg p-8 inline-block mb-12">
+                    <div class="glass-card rounded-lg p-6 sm:p-8 inline-block mb-12">
                         <h3 class="text-2xl font-bold text-white mb-4">Important Dates (UTC-0)</h3>
                         <ul class="text-slate-300 space-y-2 text-left">
-                            <li><strong>Submission Deadline:</strong> October 2nd, 2025 </li>
+                            <li><strong>Submission Deadline:</strong> October 2nd, 2025</li>
                             <li><strong>Author Notification:</strong> October 15th, 2025</li>
                             <li><strong>Camera-Ready Deadline:</strong> October 31st, 2025</li>
                             <li><strong>Workshop Date:</strong> November 15th or 16th, 2025</li>
@@ -198,7 +190,7 @@
                     <div class="text-left max-w-3xl mx-auto text-slate-300 space-y-6">
                         <h3 class="text-2xl font-bold text-white text-center">Submission Guidelines</h3>
                         <p>Submissions will be managed through OpenReview. The submission link will be updated soon. Authors must submit their paper (as a PDF), title, author names, contact information, and a brief abstract electronically via the workshop submission site. At least one author of each accepted paper must attend the conference to present their work.</p>
-                       
+                        
                         <div>
                             <h4 class="text-xl font-semibold text-white mb-2">Review Process</h4>
                             <p>The review process will be double-blind. There will be no rebuttal period.</p>
@@ -206,9 +198,7 @@
 
                         <div>
                             <h4 class="text-xl font-semibold text-white mb-2">Presentation and Proceedings</h4>
-                            <p>All accepted papers will be invited to a poster session. Participants are required to print and bring their own posters to the event. Detailed information regarding poster format and submission requirements will be provided by the organizers upon acceptance.</p>
-                            <p>Selected papers may also be given the opportunity for an oral presentation, subject to schedule constraints.</p>
-                            <p>The workshop is non-archival, and there will be no official proceedings. Only the names of the authors and the titles of the accepted papers will be posted on the website; the papers themselves will not be made public.</p>
+                            <p>All accepted papers will be invited to a poster session. Participants are required to print and bring their own posters to the event. Detailed information regarding poster format and submission requirements will be provided by the organizers upon acceptance. Selected papers may also be given the opportunity for an oral presentation, subject to schedule constraints. The workshop is non-archival, and there will be no official proceedings. Only the names of the authors and the titles of the accepted papers will be posted on the website; the papers themselves will not be made public.</p>
                         </div>
                         <div class="text-center pt-4">
                              <a href="https://openreview.net/group?id=ACM.org/ICAIF/2025/Workshop/RFTS&referrer=%5BHomepage%5D(%2F)#tab-recent-activity" target="_blank" class="bg-sky-500 text-white font-bold py-3 px-8 rounded-full hover:bg-sky-600 transition duration-300">Submit via OpenReview</a>
@@ -219,12 +209,12 @@
         </section>
 
         <!-- Speakers Section -->
-        <section id="speakers" class="py-20 bg-gray-900/50">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="section-title text-white">Invited Speakers</h2>
+        <section id="speakers" class="py-16 sm:py-20 bg-gray-900/50">
+            <div class="container mx-auto px-4 sm:px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-10 text-center text-white">Invited Speakers</h2>
                 <div class="max-w-2xl mx-auto">
                     <div class="glass-card rounded-lg p-8">
-                        <p class="text-2xl text-slate-300">
+                        <p class="text-xl sm:text-2xl text-slate-300">
                             The list of confirmed speakers will be announced soon. Stay tuned!
                         </p>
                     </div>
@@ -233,9 +223,9 @@
         </section>
 
         <!-- Topics of Interest Section -->
-        <section id="topics" class="py-20">
-            <div class="container mx-auto px-6">
-                <h2 class="section-title text-white">Topics of Interest</h2>
+        <section id="topics" class="py-16 sm:py-20">
+            <div class="container mx-auto px-4 sm:px-6">
+                <h2 class="text-3xl md:text-4xl font-bold mb-10 text-center text-white">Topics of Interest</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- Topic Category -->
                     <div class="glass-card rounded-lg p-6">
@@ -272,166 +262,51 @@
         </section>
 
         <!-- Schedule Section -->
-        <section id="schedule" class="py-20 bg-gray-900/50">
-            <div class="container mx-auto px-6">
-                <h2 class="section-title text-white">Tentative Schedule</h2>
+        <section id="schedule" class="py-16 sm:py-20 bg-gray-900/50">
+            <div class="container mx-auto px-4 sm:px-6">
+                <h2 class="text-3xl md:text-4xl font-bold mb-10 text-center text-white">Tentative Schedule</h2>
                 <div class="max-w-3xl mx-auto">
                     <div class="relative border-l-2 border-sky-500 pl-8 space-y-10">
-                        <!-- Timeline Item -->
-                        <div class="relative">
-                            <div class="absolute -left-10 top-1 h-4 w-4 rounded-full bg-sky-500"></div>
-                            <p class="font-bold text-sky-400">08:00 - 08:05</p>
-                            <h3 class="text-xl font-semibold text-white mt-1">Opening Remarks</h3>
-                        </div>
-                        <!-- Timeline Item -->
-                        <div class="relative">
-                            <div class="absolute -left-10 top-1 h-4 w-4 rounded-full bg-sky-500"></div>
-                            <p class="font-bold text-sky-400">08:05 - 08:35</p>
-                            <h3 class="text-xl font-semibold text-white mt-1">Keynote #1</h3>
-                        </div>
-                        <!-- Timeline Item -->
-                        <div class="relative">
-                            <div class="absolute -left-10 top-1 h-4 w-4 rounded-full bg-sky-500"></div>
-                            <p class="font-bold text-sky-400">08:35 - 09:05</p>
-                            <h3 class="text-xl font-semibold text-white mt-1">Invited Talk #1</h3>
-                        </div>
-                        <!-- Timeline Item -->
-                        <div class="relative">
-                            <div class="absolute -left-10 top-1 h-4 w-4 rounded-full bg-sky-500"></div>
-                            <p class="font-bold text-sky-400">09:05 - 09:45</p>
-                            <h3 class="text-xl font-semibold text-white mt-1">Best Papers Talks (#1-#2)</h3>
-                        </div>
-                        <!-- Timeline Item -->
-                        <div class="relative">
-                            <div class="absolute -left-10 top-1 h-4 w-4 rounded-full bg-slate-500"></div>
-                            <p class="font-bold text-slate-400">09:45 - 10:00</p>
-                            <h3 class="text-xl font-semibold text-white mt-1">Coffee Break</h3>
-                        </div>
-                          <!-- Timeline Item -->
-                        <div class="relative">
-                            <div class="absolute -left-10 top-1 h-4 w-4 rounded-full bg-sky-500"></div>
-                            <p class="font-bold text-sky-400">10:00 - 11:20</p>
-                            <h3 class="text-xl font-semibold text-white mt-1">Invited Talks & Best Paper</h3>
-                            <p class="text-slate-300">Invited Talk #2, Invited Talk #3 (Industry), Best Papers Talk #3</p>
-                        </div>
-                        <!-- Timeline Item -->
-                        <div class="relative">
-                            <div class="absolute -left-10 top-1 h-4 w-4 rounded-full bg-sky-500"></div>
-                            <p class="font-bold text-sky-400">11:20 - 11:55</p>
-                            <h3 class="text-xl font-semibold text-white mt-1">Keynote #2 & Closing Remarks</h3>
-                        </div>
-                          <!-- Timeline Item -->
-                        <div class="relative">
-                            <div class="absolute -left-10 top-1 h-4 w-4 rounded-full bg-slate-500"></div>
-                            <p class="font-bold text-slate-400">11:55 onwards</p>
-                            <h3 class="text-xl font-semibold text-white mt-1">Networking & Poster Session</h3>
-                        </div>
+                        <!-- Timeline items -->
+                        <div class="relative"><div class="absolute -left-10 top-1 h-4 w-4 rounded-full bg-sky-500"></div><p class="font-bold text-sky-400">08:00 - 08:05</p><h3 class="text-xl font-semibold text-white mt-1">Opening Remarks</h3></div>
+                        <div class="relative"><div class="absolute -left-10 top-1 h-4 w-4 rounded-full bg-sky-500"></div><p class="font-bold text-sky-400">08:05 - 08:35</p><h3 class="text-xl font-semibold text-white mt-1">Keynote #1</h3></div>
+                        <div class="relative"><div class="absolute -left-10 top-1 h-4 w-4 rounded-full bg-sky-500"></div><p class="font-bold text-sky-400">08:35 - 09:05</p><h3 class="text-xl font-semibold text-white mt-1">Invited Talk #1</h3></div>
+                        <div class="relative"><div class="absolute -left-10 top-1 h-4 w-4 rounded-full bg-sky-500"></div><p class="font-bold text-sky-400">09:05 - 09:45</p><h3 class="text-xl font-semibold text-white mt-1">Best Papers Talks (#1-#2)</h3></div>
+                        <div class="relative"><div class="absolute -left-10 top-1 h-4 w-4 rounded-full bg-slate-500"></div><p class="font-bold text-slate-400">09:45 - 10:00</p><h3 class="text-xl font-semibold text-white mt-1">Coffee Break</h3></div>
+                        <div class="relative"><div class="absolute -left-10 top-1 h-4 w-4 rounded-full bg-sky-500"></div><p class="font-bold text-sky-400">10:00 - 11:20</p><h3 class="text-xl font-semibold text-white mt-1">Invited Talks & Best Paper</h3><p class="text-slate-300">Invited Talk #2, Invited Talk #3 (Industry), Best Papers Talk #3</p></div>
+                        <div class="relative"><div class="absolute -left-10 top-1 h-4 w-4 rounded-full bg-sky-500"></div><p class="font-bold text-sky-400">11:20 - 11:55</p><h3 class="text-xl font-semibold text-white mt-1">Keynote #2 & Closing Remarks</h3></div>
+                        <div class="relative"><div class="absolute -left-10 top-1 h-4 w-4 rounded-full bg-slate-500"></div><p class="font-bold text-slate-400">11:55 onwards</p><h3 class="text-xl font-semibold text-white mt-1">Networking & Poster Session</h3></div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Organizers Section -->
-        <section id="organizers" class="py-20">
-            <div class="container mx-auto px-6">
-                <h2 class="section-title text-white">Organizers</h2>
+        <section id="organizers" class="py-16 sm:py-20">
+            <div class="container mx-auto px-4 sm:px-6">
+                <h2 class="text-3xl md:text-4xl font-bold mb-10 text-center text-white">Organizers</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                    <!-- Organizer Card -->
-                    <div class="glass-card rounded-lg p-6 text-center">
-                        <a href="https://tsi-yoontae.github.io/#members" target="_blank" rel="noopener noreferrer">
-                            <img src="organizer/yoontae.png" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=YH';" class="w-32 h-32 rounded-full mx-auto mb-4 border-2 border-slate-500 object-cover" alt="Yoontae Hwang">
-                            <h3 class="text-xl font-semibold text-white hover:text-sky-400 transition-colors">Yoontae Hwang</h3>
-                            <p class="text-slate-400">University of Oxford</p>
-                        </a>
-                    </div>
-                    <!-- Organizer Card -->
-                    <div class="glass-card rounded-lg p-6 text-center">
-                        <a href="https://scholar.google.co.kr/citations?user=dAMXPRcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
-                            <img src="organizer/Yongjae.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=YL';" class="w-32 h-32 rounded-full mx-auto mb-4 border-2 border-slate-500 object-cover" alt="Yongjae Lee">
-                            <h3 class="text-xl font-semibold text-white hover:text-sky-400 transition-colors">Yongjae Lee</h3>
-                            <p class="text-slate-400">UNIST</p>
-                        </a>
-                    </div>
-                    <!-- Organizer Card -->
-                    <div class="glass-card rounded-lg p-6 text-center">
-                        <a href="https://www.vita-group.space/pi" target="_blank" rel="noopener noreferrer">
-                            <img src="organizer/Zhangyang.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=ZW';" class="w-32 h-32 rounded-full mx-auto mb-4 border-2 border-slate-500 object-cover" alt="Zhangyang Wang">
-                            <h3 class="text-xl font-semibold text-white hover:text-sky-400 transition-colors">Zhangyang (Atlas) Wang</h3>
-                            <p class="text-slate-400">UT Austin</p>
-                        </a>
-                    </div>
-                    <!-- Organizer Card -->
-                    <div class="glass-card rounded-lg p-6 text-center">
-                        <a href="https://sites.google.com/site/qingsongwen8/" target="_blank" rel="noopener noreferrer">
-                            <img src="organizer/Qingsong.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=QW';" class="w-32 h-32 rounded-full mx-auto mb-4 border-2 border-slate-500 object-cover" alt="Qingsong Wen">
-                            <h3 class="text-xl font-semibold text-white hover:text-sky-400 transition-colors">Qingsong Wen</h3>
-                            <p class="text-slate-400">Squirrel AI Learning</p>
-                        </a>
-                    </div>
-                    <!-- Organizer Card -->
-                    <div class="glass-card rounded-lg p-6 text-center">
-                        <a href="https://mingjin.dev/" target="_blank" rel="noopener noreferrer">
-                            <img src="organizer/mingjin.png" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=MJ';" class="w-32 h-32 rounded-full mx-auto mb-4 border-2 border-slate-500 object-cover" alt="Ming Jin">
-                            <h3 class="text-xl font-semibold text-white hover:text-sky-400 transition-colors">Ming Jin</h3>
-                            <p class="text-slate-400">Griffith University</p>
-                        </a>
-                    </div>
-                    <!-- Organizer Card -->
-                    <div class="glass-card rounded-lg p-6 text-center">
-                        <a href="https://scholar.google.com/citations?user=mtNQD-8AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
-                            <img src="organizer/stefan-zohren.jpg" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=SZ';" class="w-32 h-32 rounded-full mx-auto mb-4 border-2 border-slate-500 object-cover" alt="Stefan Zohren">
-                            <h3 class="text-xl font-semibold text-white hover:text-sky-400 transition-colors">Stefan Zohren</h3>
-                            <p class="text-slate-400">University of Oxford</p>
-                        </a>
-                    </div>
-                    <!-- Organizer Card -->
-                    <div class="glass-card rounded-lg p-6 text-center">
-                        <a href="https://scholar.google.com/citations?user=J7fyX_sAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
-                            <img src="organizer/Dhagash-Mehta.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=DM';" class="w-32 h-32 rounded-full mx-auto mb-4 border-2 border-slate-500 object-cover" alt="Dhagash Mehta">
-                            <h3 class="text-xl font-semibold text-white hover:text-sky-400 transition-colors">Dhagash Mehta</h3>
-                            <p class="text-slate-400">BlackRock, Inc.</p>
-                        </a>
-                    </div>
-                    <!-- Organizer Card -->
-                    <div class="glass-card rounded-lg p-6 text-center">
-                        <a href="https://scholar.google.com/citations?user=NWq7sGMAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
-                            <img src="organizer/Yaxuan.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=YK';" class="w-32 h-32 rounded-full mx-auto mb-4 border-2 border-slate-500 object-cover" alt="Yaxuan Kong">
-                            <h3 class="text-xl font-semibold text-white hover:text-sky-400 transition-colors">Yaxuan Kong</h3>
-                            <p class="text-slate-400">University of Oxford</p>
-                        </a>
-                    </div>
-                    <!-- Organizer Card -->
-                    <div class="glass-card rounded-lg p-6 text-center">
-                        <a href="https://sites.google.com/view/actionable-intelligence/professor?authuser=0" target="_blank" rel="noopener noreferrer">
-                            <img src="organizer/Changhee.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=CL';" class="w-32 h-32 rounded-full mx-auto mb-4 border-2 border-slate-500 object-cover" alt="Changhee Lee">
-                            <h3 class="text-xl font-semibold text-white hover:text-sky-400 transition-colors">Changhee Lee</h3>
-                            <p class="text-slate-400">Korea University</p>
-                        </a>
-                    </div>
-                    <!-- Organizer Card -->
-                    <div class="glass-card rounded-lg p-6 text-center">
-                        <a href="https://sites.google.com/view/jaeho-kim" target="_blank" rel="noopener noreferrer">
-                            <img src="organizer/JaeHo.jpg" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=JK';" class="w-32 h-32 rounded-full mx-auto mb-4 border-2 border-slate-500 object-cover" alt="Jaeho Kim">
-                            <h3 class="text-xl font-semibold text-white hover:text-sky-400 transition-colors">Jaeho Kim</h3>
-                            <p class="text-slate-400">Korea University</p>
-                        </a>
-                    </div>
-                    <!-- Organizer Card -->
-                    <div class="glass-card rounded-lg p-6 text-center">
-                        <a href="https://scholar.google.co.uk/citations?user=VTTtSLcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">
-                            <img src="organizer/haoni.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=HN';" class="w-32 h-32 rounded-full mx-auto mb-4 border-2 border-slate-500 object-cover" alt="Hao Ni">
-                            <h3 class="text-xl font-semibold text-white hover:text-sky-400 transition-colors">Hao Ni</h3>
-                            <p class="text-slate-400">University College London</p>
-                        </a>
-                    </div>
+                    <!-- Organizer Cards will be dynamically generated or hardcoded here -->
+                    <!-- Example Organizer Card -->
+                    <div class="glass-card rounded-lg p-6 text-center"><a href="https://tsi-yoontae.github.io/#members" target="_blank" rel="noopener noreferrer"><img src="organizer/yoontae.png" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=YH';" class="w-32 h-32 rounded-full mx-auto mb-4 border-2 border-slate-500 object-cover" alt="Yoontae Hwang"><h3 class="text-xl font-semibold text-white hover:text-sky-400 transition-colors">Yoontae Hwang</h3><p class="text-slate-400">University of Oxford</p></a></div>
+                    <div class="glass-card rounded-lg p-6 text-center"><a href="https://scholar.google.co.kr/citations?user=dAMXPRcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer"><img src="organizer/Yongjae.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=YL';" class="w-32 h-32 rounded-full mx-auto mb-4 border-2 border-slate-500 object-cover" alt="Yongjae Lee"><h3 class="text-xl font-semibold text-white hover:text-sky-400 transition-colors">Yongjae Lee</h3><p class="text-slate-400">UNIST</p></a></div>
+                    <div class="glass-card rounded-lg p-6 text-center"><a href="https://www.vita-group.space/pi" target="_blank" rel="noopener noreferrer"><img src="organizer/Zhangyang.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=ZW';" class="w-32 h-32 rounded-full mx-auto mb-4 border-2 border-slate-500 object-cover" alt="Zhangyang Wang"><h3 class="text-xl font-semibold text-white hover:text-sky-400 transition-colors">Zhangyang (Atlas) Wang</h3><p class="text-slate-400">UT Austin</p></a></div>
+                    <div class="glass-card rounded-lg p-6 text-center"><a href="https://sites.google.com/site/qingsongwen8/" target="_blank" rel="noopener noreferrer"><img src="organizer/Qingsong.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=QW';" class="w-32 h-32 rounded-full mx-auto mb-4 border-2 border-slate-500 object-cover" alt="Qingsong Wen"><h3 class="text-xl font-semibold text-white hover:text-sky-400 transition-colors">Qingsong Wen</h3><p class="text-slate-400">Squirrel AI Learning</p></a></div>
+                    <div class="glass-card rounded-lg p-6 text-center"><a href="https://mingjin.dev/" target="_blank" rel="noopener noreferrer"><img src="organizer/mingjin.png" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=MJ';" class="w-32 h-32 rounded-full mx-auto mb-4 border-2 border-slate-500 object-cover" alt="Ming Jin"><h3 class="text-xl font-semibold text-white hover:text-sky-400 transition-colors">Ming Jin</h3><p class="text-slate-400">Griffith University</p></a></div>
+                    <div class="glass-card rounded-lg p-6 text-center"><a href="https://scholar.google.com/citations?user=mtNQD-8AAAAJ&hl=en" target="_blank" rel="noopener noreferrer"><img src="organizer/stefan-zohren.jpg" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=SZ';" class="w-32 h-32 rounded-full mx-auto mb-4 border-2 border-slate-500 object-cover" alt="Stefan Zohren"><h3 class="text-xl font-semibold text-white hover:text-sky-400 transition-colors">Stefan Zohren</h3><p class="text-slate-400">University of Oxford</p></a></div>
+                    <div class="glass-card rounded-lg p-6 text-center"><a href="https://scholar.google.com/citations?user=J7fyX_sAAAAJ&hl=en" target="_blank" rel="noopener noreferrer"><img src="organizer/Dhagash-Mehta.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=DM';" class="w-32 h-32 rounded-full mx-auto mb-4 border-2 border-slate-500 object-cover" alt="Dhagash Mehta"><h3 class="text-xl font-semibold text-white hover:text-sky-400 transition-colors">Dhagash Mehta</h3><p class="text-slate-400">BlackRock, Inc.</p></a></div>
+                    <div class="glass-card rounded-lg p-6 text-center"><a href="https://scholar.google.com/citations?user=NWq7sGMAAAAJ&hl=en" target="_blank" rel="noopener noreferrer"><img src="organizer/Yaxuan.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=YK';" class="w-32 h-32 rounded-full mx-auto mb-4 border-2 border-slate-500 object-cover" alt="Yaxuan Kong"><h3 class="text-xl font-semibold text-white hover:text-sky-400 transition-colors">Yaxuan Kong</h3><p class="text-slate-400">University of Oxford</p></a></div>
+                    <div class="glass-card rounded-lg p-6 text-center"><a href="https://sites.google.com/view/actionable-intelligence/professor?authuser=0" target="_blank" rel="noopener noreferrer"><img src="organizer/Changhee.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=CL';" class="w-32 h-32 rounded-full mx-auto mb-4 border-2 border-slate-500 object-cover" alt="Changhee Lee"><h3 class="text-xl font-semibold text-white hover:text-sky-400 transition-colors">Changhee Lee</h3><p class="text-slate-400">Korea University</p></a></div>
+                    <div class="glass-card rounded-lg p-6 text-center"><a href="https://sites.google.com/view/jaeho-kim" target="_blank" rel="noopener noreferrer"><img src="organizer/JaeHo.jpg" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=JK';" class="w-32 h-32 rounded-full mx-auto mb-4 border-2 border-slate-500 object-cover" alt="Jaeho Kim"><h3 class="text-xl font-semibold text-white hover:text-sky-400 transition-colors">Jaeho Kim</h3><p class="text-slate-400">Korea University</p></a></div>
+                    <div class="glass-card rounded-lg p-6 text-center"><a href="https://scholar.google.co.uk/citations?user=VTTtSLcAAAAJ&hl=en" target="_blank" rel="noopener noreferrer"><img src="organizer/haoni.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=HN';" class="w-32 h-32 rounded-full mx-auto mb-4 border-2 border-slate-500 object-cover" alt="Hao Ni"><h3 class="text-xl font-semibold text-white hover:text-sky-400 transition-colors">Hao Ni</h3><p class="text-slate-400">University College London</p></a></div>
                 </div>
             </div>
         </section>
 
         <!-- About Section -->
-        <section id="about" class="py-20 bg-gray-900/50">
-            <div class="container mx-auto px-6">
-                <h2 class="section-title text-white">About the Workshop</h2>
+        <section id="about" class="py-16 sm:py-20 bg-gray-900/50">
+            <div class="container mx-auto px-4 sm:px-6">
+                <h2 class="text-3xl md:text-4xl font-bold mb-10 text-center text-white">About the Workshop</h2>
                 <div class="max-w-4xl mx-auto text-slate-300 text-lg leading-relaxed space-y-6">
                     <p>Financial time-series analysis sits at the epicentre of today's algorithmic markets. However, its core foundations remain unsettled; the heavy-tailed noise, abrupt regime shifts, and market-microstructure frictions inherent to financial data continue to defy standard modelling assumptions. Ignoring these fundamentals has led to models that are often brittle in practice.</p>
                     <p>Simultaneously, the field is being reshaped by new frontiers in data and modelling. The proliferation of cross-modal signals from millisecond order-book updates and satellite feeds to generative-AI-curated news is overwhelming traditional pipelines. This data deluge has spurred the rise of large-scale foundation models, challenging us to reconcile immense scale with statistical soundness and avoid creating sophisticated yet unreliable black boxes.</p>
@@ -439,116 +314,37 @@
                 </div>
             </div>
         </section>
-       
+        
         <!-- Program Committee Section -->
-        <section id="committee" class="py-20">
-            <div class="container mx-auto px-6">
-                <h2 class="section-title text-white">Program Committee</h2>
+        <section id="committee" class="py-16 sm:py-20">
+            <div class="container mx-auto px-4 sm:px-6">
+                <h2 class="text-3xl md:text-4xl font-bold mb-10 text-center text-white">Program Committee</h2>
                 <div class="max-w-6xl mx-auto">
-                    <div class="glass-card rounded-lg p-8">
+                    <div class="glass-card rounded-lg p-6 sm:p-8">
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6 text-left">
-                            <!-- Committee Member -->
-                            <div>
-                                <p class="font-semibold text-white">Dong-Young Lim</p>
-                                <p class="text-slate-400 text-sm">UNIST (South Korea)</p>
-                            </div>
-                             <!-- Committee Member -->
-                            <div>
-                                <p class="font-semibold text-white">Hyoungwoo Kong</p>
-                                <p class="text-slate-400 text-sm">HUFS (South Korea)</p>
-                            </div>
-                             <!-- Committee Member -->
-                            <div>
-                                <p class="font-semibold text-white">Youngbin Lee</p>
-                                <p class="text-slate-400 text-sm">ELICE (South Korea)</p>
-                            </div>
-                             <!-- Committee Member -->
-                            <div>
-                                <p class="font-semibold text-white">Cris Salvi</p>
-                                <p class="text-slate-400 text-sm">Imperial College London (United Kingdom)</p>
-                            </div>
-                             <!-- Committee Member -->
-                            <div>
-                                <p class="font-semibold text-white">Lingyi Yang</p>
-                                <p class="text-slate-400 text-sm">University of Oxford (United Kingdom)</p>
-                            </div>
-                             <!-- Committee Member -->
-                            <div>
-                                <p class="font-semibold text-white">Yiyuan Yang</p>
-                                <p class="text-slate-400 text-sm">University of Oxford (United Kingdom)</p>
-                            </div>
-                             <!-- Committee Member -->
-                            <div>
-                                <p class="font-semibold text-white">Huidong Liang</p>
-                                <p class="text-slate-400 text-sm">University of Oxford (United Kingdom)</p>
-                            </div>
-                             <!-- Committee Member -->
-                            <div>
-                                <p class="font-semibold text-white">Keyue Jiang</p>
-                                <p class="text-slate-400 text-sm">University College London (United Kingdom)</p>
-                            </div>
-                             <!-- Committee Member -->
-                            <div>
-                                <p class="font-semibold text-white">Bohan Tang</p>
-                                <p class="text-slate-400 text-sm">University of Oxford (United Kingdom)</p>
-                            </div>
-                             <!-- Committee Member -->
-                            <div>
-                                <p class="font-semibold text-white">Zepu Wang</p>
-                                <p class="text-slate-400 text-sm">University of Washington (United States)</p>
-                            </div>
-                             <!-- Committee Member -->
-                            <div>
-                                <p class="font-semibold text-white">Jihyun Kim</p>
-                                <p class="text-slate-400 text-sm">UNIST (South Korea)</p>
-                            </div>
-                             <!-- Committee Member -->
-                            <div>
-                                <p class="font-semibold text-white">Xingjia Zhang</p>
-                                <p class="text-slate-400 text-sm">Stevens Institute of Technology (United States)</p>
-                            </div>
-                             <!-- Committee Member -->
-                            <div>
-                                <p class="font-semibold text-white">Wenjie Du</p>
-                                <p class="text-slate-400 text-sm">PyPOTS Research (Canada)</p>
-                            </div>
-                             <!-- Committee Member -->
-                            <div>
-                                <p class="font-semibold text-white">James Pedley</p>
-                                <p class="text-slate-400 text-sm">University of Oxford (United Kingdom)</p>
-                            </div>
-                             <!-- Committee Member -->
-                            <div>
-                                <p class="font-semibold text-white">Yihao Ang</p>
-                                <p class="text-slate-400 text-sm">National University of Singapore (Singapore)</p>
-                            </div>
-                             <!-- Committee Member -->
-                            <div>
-                                <p class="font-semibold text-white">Qingren Yao</p>
-                                <p class="text-slate-400 text-sm">Griffith University & Shanghai AI Lab (China)</p>
-                            </div>
-                             <!-- Committee Member -->
-                            <div>
-                                <p class="font-semibold text-white">Bosong Huang</p>
-                                <p class="text-slate-400 text-sm">Griffith University (Australia)</p>
-                            </div>
-                             <!-- Committee Member -->
-                            <div>
-                                <p class="font-semibold text-white">Tong Guan</p>
-                                <p class="text-slate-400 text-sm">Griffith University & ZJU (Australia)</p>
-                            </div>
-                             <!-- Committee Member -->
-                            <div>
-                                <p class="font-semibold text-white">Kyungjae Lee</p>
-                                <p class="text-slate-400 text-sm">Korea University (South Korea)</p>
-                            </div>
-                             <!-- Committee Member -->
-                            <div>
-                                <p class="font-semibold text-white">Gyeong-Moon Park</p>
-                                <p class="text-slate-400 text-sm">Korea University (South Korea)</p>
-                            </div>
+                            <!-- Committee Members -->
+                            <div><p class="font-semibold text-white">Dong-Young Lim</p><p class="text-slate-400 text-sm">UNIST (South Korea)</p></div>
+                            <div><p class="font-semibold text-white">Hyoungwoo Kong</p><p class="text-slate-400 text-sm">HUFS (South Korea)</p></div>
+                            <div><p class="font-semibold text-white">Youngbin Lee</p><p class="text-slate-400 text-sm">ELICE (South Korea)</p></div>
+                            <div><p class="font-semibold text-white">Cris Salvi</p><p class="text-slate-400 text-sm">Imperial College London (United Kingdom)</p></div>
+                            <div><p class="font-semibold text-white">Lingyi Yang</p><p class="text-slate-400 text-sm">University of Oxford (United Kingdom)</p></div>
+                            <div><p class="font-semibold text-white">Yiyuan Yang</p><p class="text-slate-400 text-sm">University of Oxford (United Kingdom)</p></div>
+                            <div><p class="font-semibold text-white">Huidong Liang</p><p class="text-slate-400 text-sm">University of Oxford (United Kingdom)</p></div>
+                            <div><p class="font-semibold text-white">Keyue Jiang</p><p class="text-slate-400 text-sm">University College London (United Kingdom)</p></div>
+                            <div><p class="font-semibold text-white">Bohan Tang</p><p class="text-slate-400 text-sm">University of Oxford (United Kingdom)</p></div>
+                            <div><p class="font-semibold text-white">Zepu Wang</p><p class="text-slate-400 text-sm">University of Washington (United States)</p></div>
+                            <div><p class="font-semibold text-white">Jihyun Kim</p><p class="text-slate-400 text-sm">UNIST (South Korea)</p></div>
+                            <div><p class="font-semibold text-white">Xingjia Zhang</p><p class="text-slate-400 text-sm">Stevens Institute of Technology (United States)</p></div>
+                            <div><p class="font-semibold text-white">Wenjie Du</p><p class="text-slate-400 text-sm">PyPOTS Research (Canada)</p></div>
+                            <div><p class="font-semibold text-white">James Pedley</p><p class="text-slate-400 text-sm">University of Oxford (United Kingdom)</p></div>
+                            <div><p class="font-semibold text-white">Yihao Ang</p><p class="text-slate-400 text-sm">National University of Singapore (Singapore)</p></div>
+                            <div><p class="font-semibold text-white">Qingren Yao</p><p class="text-slate-400 text-sm">Griffith University & Shanghai AI Lab (China)</p></div>
+                            <div><p class="font-semibold text-white">Bosong Huang</p><p class="text-slate-400 text-sm">Griffith University (Australia)</p></div>
+                            <div><p class="font-semibold text-white">Tong Guan</p><p class="text-slate-400 text-sm">Griffith University & ZJU (Australia)</p></div>
+                            <div><p class="font-semibold text-white">Kyungjae Lee</p><p class="text-slate-400 text-sm">Korea University (South Korea)</p></div>
+                            <div><p class="font-semibold text-white">Gyeong-Moon Park</p><p class="text-slate-400 text-sm">Korea University (South Korea)</p></div>
                         </div>
-                        <p class="mt-6 text-center text-slate-400 italic">
+                        <p class="mt-8 text-center text-slate-400 italic">
                             The program committee is subject to updates as more members are confirmed.
                         </p>
                     </div>
@@ -559,16 +355,14 @@
 
     <!-- Poster Modal -->
     <div id="poster-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 z-[100] hidden">
-        <div id="poster-modal-content" class="relative w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-lg" 
-             style="background-color: #0a0a14; background-image: radial-gradient(circle at top right, rgba(0, 198, 255, 0.1), transparent 40%), radial-gradient(circle at bottom left, rgba(0, 114, 255, 0.1), transparent 40%);">
+        <div id="poster-modal-content" class="relative w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-lg" style="background-color: #0a0a14; background-image: radial-gradient(circle at top right, rgba(0, 198, 255, 0.1), transparent 40%), radial-gradient(circle at bottom left, rgba(0, 114, 255, 0.1), transparent 40%);">
             <!-- Poster HTML will be injected here by JavaScript -->
         </div>
     </div>
 
-
     <!-- Footer -->
     <footer class="bg-gray-900 border-t border-gray-800">
-        <div class="container mx-auto px-6 py-8 text-center text-slate-400">
+        <div class="container mx-auto px-4 sm:px-6 py-8 text-center text-slate-400">
             <p>&copy; 2025 ICAIF Workshop on Rethinking Financial Time-Series. All rights reserved.</p>
             <p class="mt-2">Contact: <a href="mailto:Yoontae.Hwang@ox.ac.uk" class="text-sky-400 hover:underline">Yoontae.Hwang@ox.ac.uk</a></p>
         </div>
@@ -578,22 +372,27 @@
         // Initialize lucide icons
         lucide.createIcons();
 
-        // Mobile menu toggle
+        // --- Mobile Menu Logic ---
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuIcon = mobileMenuButton.querySelector('i');
+        
         mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+            const isHidden = mobileMenu.classList.toggle('hidden');
+            mobileMenuIcon.setAttribute('data-lucide', isHidden ? 'menu' : 'x');
+            lucide.createIcons(); // Re-render icons
         });
 
         // Close mobile menu when a link is clicked
-        const mobileNavLinks = document.querySelectorAll('#mobile-menu a');
-        mobileNavLinks.forEach(link => {
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
+                mobileMenuIcon.setAttribute('data-lucide', 'menu');
+                lucide.createIcons();
             });
         });
-       
-        // Smooth scrolling for anchor links
+        
+        // --- Smooth Scrolling Logic ---
         document.querySelectorAll('a[href^="#"]:not([target="_blank"])').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 const href = this.getAttribute('href');
@@ -602,14 +401,14 @@
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                     return;
                 }
-               
+                
                 const targetElement = document.querySelector(href);
                 if (targetElement) {
                     e.preventDefault();
                     const headerOffset = document.getElementById('header').offsetHeight;
                     const elementPosition = targetElement.getBoundingClientRect().top;
                     const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-       
+            
                     window.scrollTo({
                         top: offsetPosition,
                         behavior: "smooth"
@@ -623,39 +422,40 @@
         const posterModal = document.getElementById('poster-modal');
         const posterModalContent = document.getElementById('poster-modal-content');
 
+        // Poster content is now a template literal for easier management
         const posterBodyContent = `
-        <button id="close-poster-button" class="absolute top-4 right-4 text-white/70 hover:text-white z-10 transition-transform duration-300 hover:scale-110">
+        <button id="close-poster-button" class="absolute top-4 right-4 text-white/70 hover:text-white z-10 transition-transform duration-300 hover:scale-110" aria-label="Close poster">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </button>
         <div class="p-4 sm:p-6 lg:p-8">
             <div class="w-full max-w-5xl mx-auto">
                 <div class="glass-card rounded-2xl shadow-2xl overflow-hidden">
-                    <div class="p-8 sm:p-12">
-                        <header class="text-center mb-10">
-                            <p class="text-lg font-semibold text-sky-400 mb-2">A Workshop in conjunction with ICAIF 2025</p>
-                            <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight tracking-tight">
+                    <div class="p-6 sm:p-10">
+                        <header class="text-center mb-8">
+                            <p class="text-md sm:text-lg font-semibold text-sky-400 mb-2">A Workshop in conjunction with ICAIF 2025</p>
+                            <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight tracking-tight">
                                 Rethinking Financial Time-Series
                             </h1>
-                            <h2 class="gradient-text text-2xl md:text-3xl font-bold mt-3">
+                            <h2 class="gradient-text text-xl sm:text-2xl md:text-3xl font-bold mt-3">
                                 Foundations, Frontiers, and Future Directions
                             </h2>
                         </header>
-                        <main class="grid md:grid-cols-2 gap-x-12">
+                        <main class="grid md:grid-cols-2 gap-x-10 gap-y-8">
                             <div class="space-y-8">
-                                <section id="cfp-poster">
-                                    <h3 class="text-2xl font-bold text-center text-white mb-6">Call for Papers</h3>
+                                <section>
+                                    <h3 class="text-2xl font-bold text-center text-white mb-4">Call for Papers</h3>
                                     <div class="glass-card rounded-xl p-6 text-center border-sky-500/20">
-                                        <h4 class="text-xl font-semibold text-white mb-4">Important Dates(UTC-0)</h4>
-                                        <ul class="text-slate-300 space-y-2">
-                                            <li><strong>Submission Deadline:</strong> October 2nd, 2025 </li>
-                                            <li><strong>Author Notification:</strong> October 15th, 2025</li>
-                                            <li><strong>Camera-Ready Deadline:</strong> October 31st, 2025</li>
-                                            <li><strong>Workshop Date:</strong> November 15th or 16th, 2025</li>
+                                        <h4 class="text-lg font-semibold text-white mb-4">Important Dates (UTC-0)</h4>
+                                        <ul class="text-slate-300 space-y-2 text-sm sm:text-base">
+                                            <li><strong>Submission:</strong> Oct 2, 2025</li>
+                                            <li><strong>Notification:</strong> Oct 15, 2025</li>
+                                            <li><strong>Camera-Ready:</strong> Oct 31, 2025</li>
+                                            <li><strong>Workshop:</strong> Nov 15/16, 2025</li>
                                         </ul>
                                     </div>
                                 </section>
-                                <section id="about-poster">
-                                    <h3 class="text-2xl font-bold text-center text-white mb-6">About the Workshop</h3>
+                                <section>
+                                    <h3 class="text-2xl font-bold text-center text-white mb-4">About</h3>
                                     <div class="glass-card rounded-xl p-6 border-sky-500/20">
                                         <p class="text-slate-300 text-justify text-sm leading-relaxed">
                                             This workshop confronts core challenges in financial time-series, from its unsettled statistical foundations to the frontiers of large-scale models. We aim to bridge the gap between theory and practice—welcoming submissions on lessons from both successes and failures—to foster discussion on robust and interpretable AI for modern finance.
@@ -663,107 +463,60 @@
                                     </div>
                                 </section>
                             </div>
-                            <div id="organizers-poster">
-                                <h3 class="text-2xl font-bold text-center text-white mb-6">Organizers</h3>
-                                <div class="grid grid-cols-3 sm:grid-cols-4 gap-4">
-                                    <div class="text-center">
-                                        <img src="organizer/yoontae.png" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=YH';" class="w-24 h-24 rounded-full mx-auto mb-2 border-2 border-slate-600 object-cover" alt="Yoontae Hwang">
-                                        <h4 class="text-sm font-semibold text-white">Yoontae Hwang</h4>
-                                        <p class="text-xs text-slate-400">Univ of Oxford</p>
-                                    </div>
-                                    <div class="text-center">
-                                        <img src="organizer/Yongjae.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=YL';" class="w-24 h-24 rounded-full mx-auto mb-2 border-2 border-slate-600 object-cover" alt="Yongjae Lee">
-                                        <h4 class="text-sm font-semibold text-white">Yongjae Lee</h4>
-                                        <p class="text-xs text-slate-400">UNIST</p>
-                                    </div>
-                                    <div class="text-center">
-                                        <img src="organizer/Zhangyang.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=ZW';" class="w-24 h-24 rounded-full mx-auto mb-2 border-2 border-slate-600 object-cover" alt="Zhangyang Wang">
-                                        <h4 class="text-sm font-semibold text-white">Zhangyang (Atlas) Wang</h4>
-                                        <p class="text-xs text-slate-400">UT Austin</p>
-                                    </div>
-                                    <div class="text-center">
-                                        <img src="organizer/Qingsong.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=QW';" class="w-24 h-24 rounded-full mx-auto mb-2 border-2 border-slate-600 object-cover" alt="Qingsong Wen">
-                                        <h4 class="text-sm font-semibold text-white">Qingsong Wen</h4>
-                                        <p class="text-xs text-slate-400">Squirrel AI</p>
-                                    </div>
-                                    <div class="text-center">
-                                        <img src="organizer/mingjin.png" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=MJ';" class="w-24 h-24 rounded-full mx-auto mb-2 border-2 border-slate-600 object-cover" alt="Ming Jin">
-                                        <h4 class="text-sm font-semibold text-white">Ming Jin</h4>
-                                        <p class="text-xs text-slate-400">Griffith Univ</p>
-                                    </div>
-                                    <div class="text-center">
-                                        <img src="organizer/stefan-zohren.jpg" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=SZ';" class="w-24 h-24 rounded-full mx-auto mb-2 border-2 border-slate-600 object-cover" alt="Stefan Zohren">
-                                        <h4 class="text-sm font-semibold text-white">Stefan Zohren</h4>
-                                        <p class="text-xs text-slate-400">Univ of Oxford</p>
-                                    </div>
-                                    <div class="text-center">
-                                        <img src="organizer/Dhagash-Mehta.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=DM';" class="w-24 h-24 rounded-full mx-auto mb-2 border-2 border-slate-600 object-cover" alt="Dhagash Mehta">
-                                        <h4 class="text-sm font-semibold text-white">Dhagash Mehta</h4>
-                                        <p class="text-xs text-slate-400">BlackRock, Inc.</p>
-                                    </div>
-                                    <div class="text-center">
-                                        <img src="organizer/Yaxuan.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=YK';" class="w-24 h-24 rounded-full mx-auto mb-2 border-2 border-slate-600 object-cover" alt="Yaxuan Kong">
-                                        <h4 class="text-sm font-semibold text-white">Yaxuan Kong</h4>
-                                        <p class="text-xs text-slate-400">Univ of Oxford</p>
-                                    </div>
-                                    <div class="text-center">
-                                        <img src="organizer/Changhee.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=CL';" class="w-24 h-24 rounded-full mx-auto mb-2 border-2 border-slate-600 object-cover" alt="Changhee Lee">
-                                        <h4 class="text-sm font-semibold text-white">Changhee Lee</h4>
-                                        <p class="text-xs text-slate-400">Korea Univ</p>
-                                    </div>
-                                    <div class="text-center">
-                                        <img src="organizer/JaeHo.jpg"  onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=JK';" class="w-24 h-24 rounded-full mx-auto mb-2 border-2 border-slate-600 object-cover" alt="Jaeho Kim">
-                                        <h4 class="text-sm font-semibold text-white">Jaeho Kim</h4>
-                                        <p class="text-xs text-slate-400">Korea Univ</p>
-                                    </div>
-                                    <div class="text-center">
-                                        <img src="organizer/haoni.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=HN';" class="w-24 h-24 rounded-full mx-auto mb-2 border-2 border-slate-600 object-cover" alt="Hao Ni">
-                                        <h4 class="text-sm font-semibold text-white">Hao Ni</h4>
-                                        <p class="text-xs text-slate-400">UCL</p>
-                                    </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-center text-white mb-4">Organizers</h3>
+                                <div class="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-3 gap-4">
+                                    <div class="text-center"><img src="organizer/yoontae.png" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=YH';" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-2 border-2 border-slate-600 object-cover" alt="Yoontae Hwang"><h4 class="text-sm font-semibold text-white">Yoontae Hwang</h4><p class="text-xs text-slate-400">Univ of Oxford</p></div>
+                                    <div class="text-center"><img src="organizer/Yongjae.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=YL';" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-2 border-2 border-slate-600 object-cover" alt="Yongjae Lee"><h4 class="text-sm font-semibold text-white">Yongjae Lee</h4><p class="text-xs text-slate-400">UNIST</p></div>
+                                    <div class="text-center"><img src="organizer/Zhangyang.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=ZW';" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-2 border-2 border-slate-600 object-cover" alt="Zhangyang Wang"><h4 class="text-sm font-semibold text-white">Zhangyang (Atlas) Wang</h4><p class="text-xs text-slate-400">UT Austin</p></div>
+                                    <div class="text-center"><img src="organizer/Qingsong.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=QW';" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-2 border-2 border-slate-600 object-cover" alt="Qingsong Wen"><h4 class="text-sm font-semibold text-white">Qingsong Wen</h4><p class="text-xs text-slate-400">Squirrel AI</p></div>
+                                    <div class="text-center"><img src="organizer/mingjin.png" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=MJ';" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-2 border-2 border-slate-600 object-cover" alt="Ming Jin"><h4 class="text-sm font-semibold text-white">Ming Jin</h4><p class="text-xs text-slate-400">Griffith Univ</p></div>
+                                    <div class="text-center"><img src="organizer/stefan-zohren.jpg" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=SZ';" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-2 border-2 border-slate-600 object-cover" alt="Stefan Zohren"><h4 class="text-sm font-semibold text-white">Stefan Zohren</h4><p class="text-xs text-slate-400">Univ of Oxford</p></div>
+                                    <div class="text-center"><img src="organizer/Dhagash-Mehta.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=DM';" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-2 border-2 border-slate-600 object-cover" alt="Dhagash Mehta"><h4 class="text-sm font-semibold text-white">Dhagash Mehta</h4><p class="text-xs text-slate-400">BlackRock, Inc.</p></div>
+                                    <div class="text-center"><img src="organizer/Yaxuan.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=YK';" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-2 border-2 border-slate-600 object-cover" alt="Yaxuan Kong"><h4 class="text-sm font-semibold text-white">Yaxuan Kong</h4><p class="text-xs text-slate-400">Univ of Oxford</p></div>
+                                    <div class="text-center"><img src="organizer/Changhee.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=CL';" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-2 border-2 border-slate-600 object-cover" alt="Changhee Lee"><h4 class="text-sm font-semibold text-white">Changhee Lee</h4><p class="text-xs text-slate-400">Korea Univ</p></div>
+                                    <div class="text-center"><img src="organizer/JaeHo.jpg"  onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=JK';" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-2 border-2 border-slate-600 object-cover" alt="Jaeho Kim"><h4 class="text-sm font-semibold text-white">Jaeho Kim</h4><p class="text-xs text-slate-400">Korea Univ</p></div>
+                                    <div class="text-center"><img src="organizer/haoni.jpeg" onerror="this.onerror=null;this.src='https://placehold.co/150x150/1e293b/9ca3af?text=HN';" class="w-20 h-20 sm:w-24 sm:h-24 rounded-full mx-auto mb-2 border-2 border-slate-600 object-cover" alt="Hao Ni"><h4 class="text-sm font-semibold text-white">Hao Ni</h4><p class="text-xs text-slate-400">UCL</p></div>
                                 </div>
                             </div>
                         </main>
-                        <footer class="mt-12 pt-8 border-t border-slate-700/50">
-                            <section id="info-poster">
-                                 <p class="text-center text-xl text-slate-200 mb-4 font-semibold">
-                                     Held in Singapore, November 2025
-                                 </p>
-                                 <div class="text-center text-slate-400">
-                                     <p class="font-semibold text-white">Workshop Contact</p>
-                                     <p>Yoontae Hwang // YoontaeResearch@gmail.com</p>
-                                 </div>
-                            </section>
+                        <footer class="mt-8 pt-6 border-t border-slate-700/50">
+                            <p class="text-center text-lg sm:text-xl text-slate-200 mb-2 font-semibold">
+                                Held in Singapore, November 2025
+                            </p>
+                            <div class="text-center text-slate-400 text-sm">
+                                <p class="font-semibold text-white">Workshop Contact</p>
+                                <p>Yoontae Hwang // YoontaeResearch@gmail.com</p>
+                            </div>
                         </footer>
                     </div>
                 </div>
             </div>
         </div>
         `;
+        
+        let isModalContentInjected = false;
 
-        // Inject the poster content into the modal
-        posterModalContent.innerHTML = posterBodyContent;
-
-        // Function to open the modal
         const openModal = () => {
+            if (!isModalContentInjected) {
+                posterModalContent.innerHTML = posterBodyContent;
+                // Add close event listener only after content is injected
+                const closePosterButton = document.getElementById('close-poster-button');
+                if (closePosterButton) {
+                    closePosterButton.addEventListener('click', closeModal);
+                }
+                isModalContentInjected = true;
+            }
             posterModal.classList.remove('hidden');
             document.body.classList.add('modal-open');
         };
 
-        // Function to close the modal
         const closeModal = () => {
             posterModal.classList.add('hidden');
             document.body.classList.remove('modal-open');
         };
 
-        // Event listeners
         posterToggleButton.addEventListener('click', openModal);
-
-        // The close button is inside the injected content, so we need to get it after injection
-        const closePosterButton = document.getElementById('close-poster-button');
-        if (closePosterButton) {
-            closePosterButton.addEventListener('click', closeModal);
-        }
 
         // Close modal when clicking on the backdrop
         posterModal.addEventListener('click', (e) => {

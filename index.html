@@ -66,6 +66,12 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        .sparkline {
+            stroke-width: 2;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -233,34 +239,73 @@
             <div class="container mx-auto px-4 sm:px-6">
                 <h2 class="text-3xl md:text-4xl font-bold mb-10 text-center text-white">Topics of Interest</h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Topic Category -->
-                    <div class="glass-card rounded-lg p-6">
-                        <h3 class="text-2xl font-bold mb-4 gradient-text">Foundations & Robustness</h3>
-                        <ul class="space-y-2 text-slate-300 list-disc list-inside">
-                            <li>Principled methods for heavy-tailed noise, volatility clustering, and regime shifts.</li>
-                            <li>Case studies and post-mortems of AI model failures.</li>
-                            <li>Development of robust benchmarks and evaluation metrics.</li>
-                            <li>High-fidelity synthetic data generation.</li>
+                    
+                    <!-- Topic Category 1: Foundations -->
+                    <div class="glass-card rounded-lg p-6 flex flex-col">
+                        <div class="h-20 mb-4 opacity-70">
+                            <svg viewBox="0 0 300 80" class="w-full h-full" preserveAspectRatio="none" aria-hidden="true">
+                                <defs>
+                                    <linearGradient id="sparkline-1-gradient" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.3"/>
+                                        <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+                                    </linearGradient>
+                                </defs>
+                                <path d="M0,45 C30,65 50,25 80,40 S110,60 140,50 S170,20 200,35 S230,70 260,55 S290,30 300,40" class="sparkline" stroke="#38bdf8"/>
+                                <path d="M0,45 C30,65 50,25 80,40 S110,60 140,50 S170,20 200,35 S230,70 260,55 S290,30 300,40 L300,80 L0,80 Z" fill="url(#sparkline-1-gradient)"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 gradient-text">Foundational Time-Series Principles</h3>
+                        <ul class="space-y-2 text-slate-300 list-disc list-inside flex-grow">
+                            <li>Principled time-series methods for heavy-tails, volatility clustering, and regime shifts.</li>
+                            <li>Post-mortems of time-series model failures in live trading.</li>
+                            <li>Robust benchmarks and backtesting protocols for financial time-series.</li>
+                            <li>High-fidelity synthetic time-series generation (e.g., GANs, SDEs).</li>
                         </ul>
                     </div>
-                    <!-- Topic Category -->
-                    <div class="glass-card rounded-lg p-6">
-                        <h3 class="text-2xl font-bold mb-4 gradient-text">Frontiers in Data & Models</h3>
-                        <ul class="space-y-2 text-slate-300 list-disc list-inside">
-                            <li>Frameworks for multi-modal, irregular, and high-frequency data.</li>
-                            <li>Techniques for adapting to distribution shifts in real-time.</li>
-                            <li>Application and limitations of foundation models and LLMs in finance.</li>
-                            <li>Self-supervised and semi-supervised learning.</li>
+
+                    <!-- Topic Category 2: Frontiers -->
+                    <div class="glass-card rounded-lg p-6 flex flex-col">
+                        <div class="h-20 mb-4 opacity-70">
+                             <svg viewBox="0 0 300 80" class="w-full h-full" preserveAspectRatio="none" aria-hidden="true">
+                                <defs>
+                                    <linearGradient id="sparkline-2-gradient" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.3"/>
+                                        <stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
+                                    </linearGradient>
+                                </defs>
+                                <path d="M0,60 C30,50 50,70 80,65 S110,30 140,40 S170,60 200,50 S230,25 260,30 S290,10 300,20" class="sparkline" stroke="#a78bfa"/>
+                                <path d="M0,60 C30,50 50,70 80,65 S110,30 140,40 S170,60 200,50 S230,25 260,30 S290,10 300,20 L300,80 L0,80 Z" fill="url(#sparkline-2-gradient)"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 gradient-text">Frontiers in Time-Series Data & Models</h3>
+                        <ul class="space-y-2 text-slate-300 list-disc list-inside flex-grow">
+                            <li>Modeling non-stationary, multi-modal, and irregularly-sampled time-series.</li>
+                            <li>Online learning and adaptation to distribution shifts in time-series.</li>
+                            <li>Foundation models for financial time-series: Scaling laws and limitations.</li>
+                            <li>Self-supervised representation learning for time-series.</li>
                         </ul>
                     </div>
-                    <!-- Topic Category -->
-                    <div class="glass-card rounded-lg p-6">
-                        <h3 class="text-2xl font-bold mb-4 gradient-text">Future Directions & New Paradigms</h3>
-                        <ul class="space-y-2 text-slate-300 list-disc list-inside">
-                            <li>Causal inference and discovery in financial time-series.</li>
-                            <li>Interpretability and explainability of "black-box" models.</li>
-                            <li>Rigorous uncertainty quantification for forecasting.</li>
-                            <li>Integrating economic costs and market impact into model design.</li>
+
+                    <!-- Topic Category 3: Future -->
+                    <div class="glass-card rounded-lg p-6 flex flex-col">
+                        <div class="h-20 mb-4 opacity-70">
+                            <svg viewBox="0 0 300 80" class="w-full h-full" preserveAspectRatio="none" aria-hidden="true">
+                                <defs>
+                                    <linearGradient id="sparkline-3-gradient" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0%" stop-color="#f472b6" stop-opacity="0.3"/>
+                                        <stop offset="100%" stop-color="#f472b6" stop-opacity="0"/>
+                                    </linearGradient>
+                                </defs>
+                                <path d="M0,30 C50,20 80,50 120,55 S180,25 220,40 S260,70 300,60" class="sparkline" stroke="#f472b6"/>
+                                <path d="M0,30 C50,20 80,50 120,55 S180,25 220,40 S260,70 300,60 L300,80 L0,80 Z" fill="url(#sparkline-3-gradient)"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 gradient-text">New Paradigms for Time-Series Analysis</h3>
+                        <ul class="space-y-2 text-slate-300 list-disc list-inside flex-grow">
+                            <li>Causal discovery and inference from observational time-series data.</li>
+                            <li>Interpretability of deep learning models for time-series forecasting (XAI).</li>
+                            <li>Rigorous uncertainty quantification for probabilistic time-series forecasting.</li>
+                            <li>Integrating market microstructure into time-series model design.</li>
                         </ul>
                     </div>
                 </div>

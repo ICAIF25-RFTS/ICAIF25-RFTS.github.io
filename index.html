@@ -72,6 +72,15 @@
             stroke-linecap: round;
             stroke-linejoin: round;
         }
+        /* --- New Hero Background Style --- */
+        #hero {
+            background-color: #0a0a0a;
+            background-image:
+                radial-gradient(at 15% 25%, hsla(204, 86%, 53%, 0.12) 0px, transparent 50%),
+                radial-gradient(at 85% 30%, hsla(262, 77%, 71%, 0.1) 0px, transparent 50%),
+                radial-gradient(at 70% 85%, hsla(328, 84%, 64%, 0.12) 0px, transparent 50%),
+                radial-gradient(at 30% 75%, hsla(204, 86%, 53%, 0.08) 0px, transparent 50%);
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -147,7 +156,7 @@
 
     <main>
         <!-- Hero Section -->
-        <section id="hero" class="min-h-screen flex items-center pt-24 pb-12" style="background-image: url('https://placehold.co/1920x1080/0a0a0a/1f2937?text='); background-size: cover; background-position: center;">
+        <section id="hero" class="min-h-screen flex items-center pt-24 pb-12">
             <div class="container mx-auto px-4 sm:px-6 text-center">
                 <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight mb-4">
                     Workshop on Rethinking Financial Time-Series
